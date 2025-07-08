@@ -4,51 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="/style/style.css">
+   <link rel="stylesheet" href="/style/login.css">
 </head>
 <body>
-    <!-- Pantalla de Login -->
-    <div id="loginScreen" class="screen active">
-        <div class="login-background">
-            <!-- Elementos flotantes -->
-            <div class="floating-elements">
-                <div class="cloud cloud-1"></div>
-                <div class="cloud cloud-2"></div>
-                <div class="cloud cloud-3"></div>
-                <div class="star star-1">⭐</div>
-                <div class="star star-2">✨</div>
-                <div class="star star-3">🌟</div>
-                <div class="star star-4">💫</div>
-                <div class="star star-5">⭐</div>
-            </div>
+    <div class="login_container">
+        <div class="login_header">
+            <div class="img_container">
+            <img class="portafolio_img" src="/storage/img/Fondo.png" alt="">
+        </div>
+        </div>
+        <div class="login_bienvenida">
+        <p class="login_bienvenida_text">Bienvenido Usuario</p>
+        <p>Cargando Escritorio Mágico</p>
+        </div>
+        <div><button class="entrar_login">Entrar </button></div>
+    </div>
+  
+ 
+        
 
-            <!-- Botón de idioma flotante -->
-            <button class="language-toggle-btn" onclick="toggleLanguage()">
-                🌐 <span id="currentLang">ES</span>
-            </button>
+         
 
+
+
+
+
+<!--
             <div class="login-card">
                 <div class="login-header">
                     <div class="avatar">
                         <div class="avatar-icon">👨‍💻</div>
-                        <div class="avatar-sparkle">✨</div>
                     </div>
                     <h1 id="loginTitle" class="login-title">Bienvenido a John Doe OS 🌈</h1>
                 </div>
-                
+
                 <div class="typing-text">
                     <div id="typingText" class="typing-animation"></div>
                 </div>
-                
-                <form class="login-form">
+
+                <div class="login-form">
                     <input type="text" class="login-input" id="usernameInput" placeholder="Nombre de usuario" value="John Doe">
                     <input type="password" class="login-input" id="passwordInput" placeholder="Contraseña mágica ✨" value="magic">
-                    <button type="button" id="loginButton" class="login-button">
+                    <a href="/index/desk.html" id="loginButton" class="login-button">
                         <span id="loginButtonText">Entrar al Escritorio ✨</span>
-                    </button>
-                </form>
+                    </a>
+                </div>
 
-                <!-- Información adicional -->
+              Información adicional 
                 <div class="login-info">
                     <p id="portfolioInfo">✨ Portfolio Mágico de Desarrollador ✨</p>
                     <div class="login-features">
@@ -58,124 +60,17 @@
                     </div>
                 </div>
             </div>
+
+
+          Botón de idioma flotante 
+               <button class="language-toggle-btn" onclick="toggleLanguage()">
+                🌐 <span id="currentLang">ES</span>
+            </button>
+    -->
         </div>
     </div>
 
-    <!-- Pantalla del Escritorio -->
-    <div id="desktopScreen" class="screen">
-        <div class="desktop-background">
-            <!-- Elementos flotantes -->
-            <div class="floating-elements">
-                <div class="cloud cloud-1"></div>
-                <div class="cloud cloud-2"></div>
-                <div class="cloud cloud-3"></div>
-                <div class="star star-1">⭐</div>
-                <div class="star star-2">✨</div>
-                <div class="star star-3">🌟</div>
-                <div class="star star-4">💫</div>
-                <div class="star star-5">⭐</div>
-            </div>
-
-            <!-- Íconos del escritorio -->
-            <div class="desktop-icons">
-                <!-- Fila 1 -->
-                <a href="/index/work.html" class="desktop-icon" style="top: 80px; left: 80px;">
-                    <div class="icon-container">
-                        <div class="folder-icon">📁</div>
-                        <div class="icon-overlay">💼</div>
-                    </div>
-                    <div id="workLabel" class="icon-label">Experiencia Laboral</div>
-                </a>
-
-                <a href="/index/projects.html" class="desktop-icon" style="top: 80px; left: 240px;">
-                    <div class="icon-container">
-                        <div class="folder-icon">📁</div>
-                        <div class="icon-overlay">🚀</div>
-                    </div>
-                    <div id="githubLabel" class="icon-label">Mis Proyectos</div>
-                </a>
-
-                <a href="/index/education.html" class="desktop-icon" style="top: 80px; left: 400px;">
-                    <div class="icon-container">
-                        <div class="folder-icon">📁</div>
-                        <div class="icon-overlay">🎓</div>
-                    </div>
-                    <div id="educationLabel" class="icon-label">Educación</div>
-                </a>
-
-                <!-- Fila 2 -->
-                <a href="/index/skills.html" class="desktop-icon" style="top: 240px; left: 80px;">
-                    <div class="icon-container">
-                        <div class="folder-icon">📁</div>
-                        <div class="icon-overlay">🛠️</div>
-                    </div>
-                    <div id="skillsLabel" class="icon-label">Habilidades</div>
-                </a>
-
-                <a href="/index/contact.html" class="desktop-icon" style="top: 240px; left: 240px;">
-                    <div class="icon-container">
-                        <div class="folder-icon">📁</div>
-                        <div class="icon-overlay">💌</div>
-                    </div>
-                    <div id="contactLabel" class="icon-label">Contáctame</div>
-                </a>
-
-                <div class="desktop-icon" style="top: 240px; left: 400px;">
-                    <div class="icon-container">
-                        <div class="folder-icon">📁</div>
-                        <div class="icon-overlay">📸</div>
-                    </div>
-                    <div id="photosLabel" class="icon-label">Galería de Fotos</div>
-                </div>
-
-                <!-- Fila 3 -->
-                <div class="desktop-icon" style="top: 400px; left: 80px;">
-                    <div class="icon-container">
-                        <div class="file-icon">🎵</div>
-                    </div>
-                    <div id="musicLabel" class="icon-label">Música Favorita</div>
-                </div>
-
-                <div class="desktop-icon language-icon" style="top: 400px; left: 240px;" onclick="toggleLanguage()">
-                    <div class="icon-container">
-                        <div class="file-icon">🌐</div>
-                    </div>
-                    <div id="languageLabel" class="icon-label">Idioma</div>
-                </div>
-
-                <div class="desktop-icon" style="top: 400px; left: 400px;">
-                    <div class="icon-container">
-                        <div class="trash-icon-img">🗑️</div>
-                    </div>
-                    <div id="trashLabel" class="icon-label">Papelera</div>
-                </div>
-            </div>
-
-            <!-- Barra de tareas -->
-            <div class="taskbar">
-                <a href="/index/star.html" class="start-button">
-                    <span id="startButtonText">🌟 Inicio</span>
-                </a>
-
-                <div class="taskbar-apps">
-                    <a href="/index/work.html" class="taskbar-app">💼</a>
-                    <a href="/index/projects.html" class="taskbar-app">🚀</a>
-                    <a href="/index/education.html" class="taskbar-app">🎓</a>
-                    <a href="/index/skills.html" class="taskbar-app">🛠️</a>
-                    <a href="/index/contact.html" class="taskbar-app">💌</a>
-                </div>
-
-                <div class="system-tray">
-                    <span class="tray-icon">🔊</span>
-                    <span class="tray-icon">📶</span>
-                    <div class="clock">
-                        <div id="currentTime">12:00</div>
-                        <div id="currentDate">01/01/2024</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<script src="/js/script.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/login.js"></script>
+</body>
 </html>

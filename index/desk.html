@@ -8,134 +8,131 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
- <body>
-    <div class="page-container start-page">
-        <div class="desktop-background">
-            <!-- Elementos flotantes -->
-            <div class="floating-elements">
-                <div class="cloud cloud-1"></div>
-                <div class="cloud cloud-2"></div>
-                <div class="cloud cloud-3"></div>
-                <div class="star star-1">⭐</div>
-                <div class="star star-2">✨</div>
-                <div class="star star-3">🌟</div>
-                <div class="star star-4">💫</div>
-                <div class="star star-5">⭐</div>
-            </div>
-
-            <div class="start-menu-fullscreen">
-                <div class="start-menu-container">
-                    <!-- Botón de cerrar -->
-                    <a href="#" class="close-start-menu desktop-link" data-href="index1.html">
-                        <span>×</span>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>John Doe OS - Desktop</title>
+        <link rel="stylesheet" href="/style/style.css">
+    </head>
+    <body>
+        <!-- Pantalla del Escritorio -->
+        <div id="desktopScreen" class="screen active">
+            <div class="desktop-background">
+                <!-- Elementos flotantes -->
+                <div class="floating-elements">
+                    <div class="cloud cloud-1"></div>
+                    <div class="cloud cloud-2"></div>
+                    <div class="cloud cloud-3"></div>
+                    <div class="star star-1">⭐</div>
+                    <div class="star star-2">✨</div>
+                    <div class="star star-3">🌟</div>
+                    <div class="star star-4">💫</div>
+                    <div class="star star-5">⭐</div>
+                </div>
+    
+                <!-- Íconos del escritorio -->
+                <div class="desktop-icons">
+                    <!-- Fila 1 -->
+                    <a href="/index/work.html" class="desktop-icon" style="top: 80px; left: 80px;">
+                        <div class="icon-container">
+                            <div class="folder-icon">📁</div>
+                            <div class="icon-overlay">💼</div>
+                        </div>
+                        <div id="workLabel" class="icon-label">Experiencia Laboral</div>
                     </a>
-
-                    <div class="start-menu-header">
-                        <div class="user-info-large">
-                            <div class="user-avatar-large">👨‍💻</div>
-                            <div class="user-details">
-                                <div class="user-name-large">John Doe</div>
-                                <div id="userTitle" class="user-title-large">Desarrollador Mágico</div>
-                            </div>
+    
+                    <a href="/index/projects.html" class="desktop-icon" style="top: 80px; left: 240px;">
+                        <div class="icon-container">
+                            <div class="folder-icon">📁</div>
+                            <div class="icon-overlay">🚀</div>
                         </div>
+                        <div id="githubLabel" class="icon-label">Mis Proyectos</div>
+                    </a>
+    
+                    <a href="/index/education.html" class="desktop-icon" style="top: 80px; left: 400px;">
+                        <div class="icon-container">
+                            <div class="folder-icon">📁</div>
+                            <div class="icon-overlay">🎓</div>
+                        </div>
+                        <div id="educationLabel" class="icon-label">Educación</div>
+                    </a>
+    
+                    <!-- Fila 2 -->
+                    <a href="/index/skills.html" class="desktop-icon" style="top: 240px; left: 80px;">
+                        <div class="icon-container">
+                            <div class="folder-icon">📁</div>
+                            <div class="icon-overlay">🛠️</div>
+                        </div>
+                        <div id="skillsLabel" class="icon-label">Habilidades</div>
+                    </a>
+    
+                    <a href="/index/contact.html" class="desktop-icon" style="top: 240px; left: 240px;">
+                        <div class="icon-container">
+                            <div class="folder-icon">📁</div>
+                            <div class="icon-overlay">💌</div>
+                        </div>
+                        <div id="contactLabel" class="icon-label">Contáctame</div>
+                    </a>
+    
+                    <div class="desktop-icon" style="top: 240px; left: 400px;">
+                        <div class="icon-container">
+                            <div class="folder-icon">📁</div>
+                            <div class="icon-overlay">📸</div>
+                        </div>
+                        <div id="photosLabel" class="icon-label">Galería de Fotos</div>
                     </div>
-
-                    <div class="start-menu-separator"></div>
-
-                    <div class="start-menu-grid">
-                        <div class="start-menu-section">
-                            <h3 id="portfolioSectionTitle" class="section-title-start">📁 Portfolio</h3>
-                            <div class="start-menu-items">
-                                <a href="#" class="start-menu-item-large desktop-link" data-href="work.html">
-                                    <div class="menu-icon-large">💼</div>
-                                    <div class="menu-text">
-                                        <span id="menuWork" class="menu-title">Trabajo</span>
-                                        <span id="menuWorkDesc" class="menu-description">Experiencia profesional</span>
-                                    </div>
-                                </a>
-
-                                <a href="#" class="start-menu-item-large desktop-link" data-href="projects.html">
-                                    <div class="menu-icon-large">🚀</div>
-                                    <div class="menu-text">
-                                        <span id="menuProjects" class="menu-title">Proyectos</span>
-                                        <span id="menuProjectsDesc" class="menu-description">Mis creaciones</span>
-                                    </div>
-                                </a>
-
-                                <a href="#" class="start-menu-item-large desktop-link" data-href="education.html">
-                                    <div class="menu-icon-large">🎓</div>
-                                    <div class="menu-text">
-                                        <span id="menuEducation" class="menu-title">Educación</span>
-                                        <span id="menuEducationDesc" class="menu-description">Formación académica</span>
-                                    </div>
-                                </a>
-
-                                <a href="#" class="start-menu-item-large desktop-link" data-href="skills.html">
-                                    <div class="menu-icon-large">🛠️</div>
-                                    <div class="menu-text">
-                                        <span id="menuSkills" class="menu-title">Habilidades</span>
-                                        <span id="menuSkillsDesc" class="menu-description">Tecnologías y skills</span>
-                                    </div>
-                                </a>
-
-                                <a href="#" class="start-menu-item-large desktop-link" data-href="contact.html">
-                                    <div class="menu-icon-large">💌</div>
-                                    <div class="menu-text">
-                                        <span id="menuContact" class="menu-title">Contacto</span>
-                                        <span id="menuContactDesc" class="menu-description">Información de contacto</span>
-                                    </div>
-                                </a>
-                            </div>
+    
+                    <!-- Fila 3 -->
+                    <div class="desktop-icon" style="top: 400px; left: 80px;">
+                        <div class="icon-container">
+                            <div class="file-icon">🎵</div>
                         </div>
-
-                        <div class="start-menu-section">
-                            <h3 id="systemSectionTitle" class="section-title-start">⚙️ Sistema</h3>
-                            <div class="start-menu-items">
-                                <div class="start-menu-item-large language-menu-item">
-                                    <div class="menu-icon-large">🌐</div>
-                                    <div class="menu-text">
-                                        <span id="menuLanguage" class="menu-title">Idioma: Español</span>
-                                        <span id="menuLanguageDesc" class="menu-description">Cambiar idioma</span>
-                                    </div>
-                                </div>
-
-                                <div class="start-menu-item-large">
-                                    <div class="menu-icon-large">⚙️</div>
-                                    <div class="menu-text">
-                                        <span id="menuSettings" class="menu-title">Configuración</span>
-                                        <span id="menuSettingsDesc" class="menu-description">Ajustes del sistema</span>
-                                    </div>
-                                </div>
-
-                                <div class="start-menu-item-large shutdown-item">
-                                    <div class="menu-icon-large">⚡</div>
-                                    <div class="menu-text">
-                                        <span id="menuShutdown" class="menu-title">Apagar</span>
-                                        <span id="menuShutdownDesc" class="menu-description">Cerrar sesión</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="musicLabel" class="icon-label">Música Favorita</div>
                     </div>
-
-                    <div class="start-menu-footer">
-                        <div class="system-info">
-                            <div class="system-time">
-                                <div id="currentTime">12:00</div>
-                                <div id="currentDate">01/01/2024</div>
-                            </div>
-                            <div class="system-status">
-                                <span class="status-icon">🔊</span>
-                                <span class="status-icon">📶</span>
-                                <span class="status-icon">🔋</span>
-                            </div>
+    
+                    <div class="desktop-icon language-icon" style="top: 400px; left: 240px;" onclick="toggleLanguage()">
+                        <div class="icon-container">
+                            <div class="file-icon">🌐</div>
+                        </div>
+                        <div id="languageLabel" class="icon-label">Idioma</div>
+                    </div>
+    
+                    <div class="desktop-icon" style="top: 400px; left: 400px;">
+                        <div class="icon-container">
+                            <div class="trash-icon-img">🗑️</div>
+                        </div>
+                        <div id="trashLabel" class="icon-label">Papelera</div>
+                    </div>
+                </div>
+    
+                <!-- Barra de tareas -->
+                <div class="taskbar">
+                    <a href="/index/star.html" class="start-button">
+                        <span id="startButtonText">🌟 Inicio</span>
+                    </a>
+                    <div class="taskbar-apps">
+                        <a href="/index/work.html" class="taskbar-app">💼</a>
+                        <a href="/index/projects.html" class="taskbar-app">🚀</a>
+                        <a href="/index/education.html" class="taskbar-app">🎓</a>
+                        <a href="/index/skills.html" class="taskbar-app">🛠️</a>
+                        <a href="/index/contact.html" class="taskbar-app">💌</a>
+                    </div>
+                    <div class="system-tray">
+                        <span class="tray-icon">🔊</span>
+                        <span class="tray-icon">📶</span>
+                        <div class="clock">
+                            <div id="currentTime">12:00</div>
+                            <div id="currentDate">01/01/2024</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script src="/js/page.js"></script>
-</body>
-</html>
+    
+        <script src="/js/common.js"></script>
+        <script src="/js/desktop.js"></script>
+    </body>
+    </html>
+    

@@ -1,3 +1,4 @@
+// Variables y funciones compartidas
 let currentLanguage = localStorage.getItem("language") || "es"
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
@@ -46,31 +47,19 @@ const translations = {
   },
 }
 
-function updateTexts() {
-  const t = translations[currentLanguage]
+function toggleLanguage() {
+  currentLanguage = currentLanguage === "es" ? "en" : "es"
+  localStorage.setItem("language", currentLanguage)
+  updateTexts()
+  updateDesktopLinks()
 
-  // Login screen
-  document.getElementById("loginTitle").textContent = t.welcome
-  document.getElementById("loginButtonText").textContent = t.loginButton
-  document.getElementById("usernameInput").placeholder = t.username
-  document.getElementById("passwordInput").placeholder = t.password
-  document.getElementById("portfolioInfo").textContent = t.portfolioInfo
-  document.getElementById("feature1").textContent = t.feature1
-  document.getElementById("feature2").textContent = t.feature2
-  document.getElementById("feature3").textContent = t.feature3
-  document.getElementById("currentLang").textContent = currentLanguage.toUpperCase()
+  // Update login button href if on login page
+  const updateLoginButtonHref = window.updateLoginButtonHref || (() => {})
+  updateLoginButtonHref()
 
-  // Desktop
-  document.getElementById("startButtonText").textContent = t.startButton
-  document.getElementById("workLabel").textContent = t.workLabel
-  document.getElementById("githubLabel").textContent = t.githubLabel
-  document.getElementById("educationLabel").textContent = t.educationLabel
-  document.getElementById("skillsLabel").textContent = t.skillsLabel
-  document.getElementById("contactLabel").textContent = t.contactLabel
-  document.getElementById("photosLabel").textContent = t.photosLabel
-  document.getElementById("musicLabel").textContent = t.musicLabel
-  document.getElementById("languageLabel").textContent = t.languageLabel
-  document.getElementById("trashLabel").textContent = t.trashLabel
+  // Start typing animation if on login page
+  const startTypingAnimation = window.startTypingAnimation || (() => {})
+  startTypingAnimation()
 }
 
 function updateDesktopLinks() {
@@ -80,96 +69,6 @@ function updateDesktopLinks() {
       link.href = `${href}?lang=${currentLanguage}`
     }
   })
-}
-
-function setupEventListeners() {
-  // Login
-  const loginButton = document.getElementById("loginButton")
-  if (loginButton) {
-    loginButton.addEventListener("click", showDesktop)
-  }
-
-  // Language icon
-  const languageIcon = document.querySelector(".language-icon")
-  if (languageIcon) {
-    languageIcon.addEventListener("dblclick", toggleLanguage)
-    if (isMobile) {
-      languageIcon.addEventListener("click", toggleLanguage)
-    }
-  }
-
-  // Prevent zoom on mobile
-  document.addEventListener(
-    "touchstart",
-    (e) => {
-      if (e.touches.length > 1) {
-        e.preventDefault()
-      }
-    },
-    { passive: false },
-  )
-}
-
-function toggleLanguage() {
-  currentLanguage = currentLanguage === "es" ? "en" : "es"
-  localStorage.setItem("language", currentLanguage)
-  updateTexts()
-  updateDesktopLinks()
-  startTypingAnimation()
-}
-
-function updateClock() {
-  const now = new Date()
-  const timeString = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-  const dateString = now.toLocaleDateString()
-
-  const timeElement = document.getElementById("currentTime")
-  const dateElement = document.getElementById("currentDate")
-
-  if (timeElement) timeElement.textContent = timeString
-  if (dateElement) dateElement.textContent = dateString
-}
-
-function startTypingAnimation() {
-  const typingElement = document.getElementById("typingText")
-  if (!typingElement) return
-
-  const text = translations[currentLanguage].loadingText
-  let i = 0
-  typingElement.textContent = ""
-
-  const timer = setInterval(() => {
-    if (i < text.length) {
-      typingElement.textContent += text.charAt(i)
-      i++
-    } else {
-      clearInterval(timer)
-    }
-  }, 100)
-}
-
-function showDesktop() {
-  document.getElementById("loginScreen").classList.remove("active")
-  document.getElementById("desktopScreen").classList.add("active")
-}
-
-function initializeApp() {
-  const urlParams = new URLSearchParams(window.location.search)
-  const langParam = urlParams.get("lang")
-  if (langParam) {
-    currentLanguage = langParam
-    localStorage.setItem("language", currentLanguage)
-  }
-
-  updateTexts()
-  setupEventListeners()
-  updateDesktopLinks()
-  startTypingAnimation()
-  updateClock()
-  setInterval(updateClock, 1000)
-
-  // Add floating effects
-  addFloatingEffects()
 }
 
 function addFloatingEffects() {
@@ -192,7 +91,6 @@ function addFloatingElement(emoji, duration = 3000) {
   element.style.left = Math.random() * window.innerWidth + "px"
   element.style.top = window.innerHeight + "px"
   element.style.transition = `all ${duration}ms ease-out`
-
   document.body.appendChild(element)
 
   setTimeout(() => {
@@ -207,4 +105,23 @@ function addFloatingElement(emoji, duration = 3000) {
   }, duration)
 }
 
-document.addEventListener("DOMContentLoaded", initializeApp)
+// Inicializar idioma desde URL
+function initializeLanguage() {
+  const urlParams = new URLSearchParams(window.location.search)
+  const langParam = urlParams.get("lang")
+  if (langParam) {
+    currentLanguage = langParam
+    localStorage.setItem("language", currentLanguage)
+  }
+}
+
+// Función para actualizar los textos en la página
+function updateTexts() {
+  const elements = document.querySelectorAll("[data-lang]")
+  elements.forEach((element) => {
+    const key = element.getAttribute("data-lang")
+    if (translations[currentLanguage][key]) {
+      element.textContent = translations[currentLanguage][key]
+    }
+  })
+}

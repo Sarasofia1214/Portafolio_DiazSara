@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+  }
+  
+  body {
+    font-family: "Comic Neue";
+    background-image: url(/storage/img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    height: fit-content;
+    overflow-x: hidden;
+}
+  .login_container{
+    background-color: rgba(241, 181, 181, 0.4);
+    padding: 25vw;
+    margin: 3vw;
+    margin-top: 20vw;
+    border-radius: 10vw;
+    height: 20vw;
+  }
+
+  .login_bienvenida_text{
+    padding: 6vw;
+    display: flex;
+    text-align: center;
+    font-size: 4vw;
+    padding-bottom: 0;
+    padding-top: 12vw;
+  }
+
+  .img_container{
+    width: 60vw;
+  }
+  .portafolio_img{
+    width: 49vw;
+    height: 33vw;
+    margin-top: -20vw;
+    position: absolute;
+ 
+  }
