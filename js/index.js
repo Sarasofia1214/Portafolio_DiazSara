@@ -1,5 +1,4 @@
 let currentLanguage = localStorage.getItem("language") || "es"
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
 const translations = {
   es: {
@@ -50,71 +49,54 @@ function updateTexts() {
   const t = translations[currentLanguage]
 
   // Login screen
-  document.getElementById("loginTitle").textContent = t.welcome
-  document.getElementById("loginButtonText").textContent = t.loginButton
-  document.getElementById("usernameInput").placeholder = t.username
-  document.getElementById("passwordInput").placeholder = t.password
-  document.getElementById("portfolioInfo").textContent = t.portfolioInfo
-  document.getElementById("feature1").textContent = t.feature1
-  document.getElementById("feature2").textContent = t.feature2
-  document.getElementById("feature3").textContent = t.feature3
-  document.getElementById("currentLang").textContent = currentLanguage.toUpperCase()
+  const loginTitle = document.getElementById("loginTitle")
+  const loginButtonText = document.getElementById("loginButtonText")
+  const usernameInput = document.getElementById("usernameInput")
+  const passwordInput = document.getElementById("passwordInput")
+  const portfolioInfo = document.getElementById("portfolioInfo")
+  const feature1 = document.getElementById("feature1")
+  const feature2 = document.getElementById("feature2")
+  const feature3 = document.getElementById("feature3")
+  const currentLang = document.getElementById("currentLang")
+
+  if (loginTitle) loginTitle.textContent = t.welcome
+  if (loginButtonText) loginButtonText.textContent = t.loginButton
+  if (usernameInput) usernameInput.placeholder = t.username
+  if (passwordInput) passwordInput.placeholder = t.password
+  if (portfolioInfo) portfolioInfo.textContent = t.portfolioInfo
+  if (feature1) feature1.textContent = t.feature1
+  if (feature2) feature2.textContent = t.feature2
+  if (feature3) feature3.textContent = t.feature3
+  if (currentLang) currentLang.textContent = currentLanguage.toUpperCase()
 
   // Desktop
-  document.getElementById("startButtonText").textContent = t.startButton
-  document.getElementById("workLabel").textContent = t.workLabel
-  document.getElementById("githubLabel").textContent = t.githubLabel
-  document.getElementById("educationLabel").textContent = t.educationLabel
-  document.getElementById("skillsLabel").textContent = t.skillsLabel
-  document.getElementById("contactLabel").textContent = t.contactLabel
-  document.getElementById("photosLabel").textContent = t.photosLabel
-  document.getElementById("musicLabel").textContent = t.musicLabel
-  document.getElementById("languageLabel").textContent = t.languageLabel
-  document.getElementById("trashLabel").textContent = t.trashLabel
-}
+  const startButtonText = document.getElementById("startButtonText")
+  const workLabel = document.getElementById("workLabel")
+  const githubLabel = document.getElementById("githubLabel")
+  const educationLabel = document.getElementById("educationLabel")
+  const skillsLabel = document.getElementById("skillsLabel")
+  const contactLabel = document.getElementById("contactLabel")
+  const photosLabel = document.getElementById("photosLabel")
+  const musicLabel = document.getElementById("musicLabel")
+  const languageLabel = document.getElementById("languageLabel")
+  const trashLabel = document.getElementById("trashLabel")
 
-function updateDesktopLinks() {
-  document.querySelectorAll(".desktop-link").forEach((link) => {
-    const href = link.getAttribute("data-href")
-    if (href) {
-      link.href = `${href}?lang=${currentLanguage}`
-    }
-  })
-}
-
-function setupEventListeners() {
-  // Login
-  const loginButton = document.getElementById("loginButton")
-  if (loginButton) {
-    loginButton.addEventListener("click", showDesktop)
-  }
-
-  // Language icon
-  const languageIcon = document.querySelector(".language-icon")
-  if (languageIcon) {
-    languageIcon.addEventListener("dblclick", toggleLanguage)
-    if (isMobile) {
-      languageIcon.addEventListener("click", toggleLanguage)
-    }
-  }
-
-  // Prevent zoom on mobile
-  document.addEventListener(
-    "touchstart",
-    (e) => {
-      if (e.touches.length > 1) {
-        e.preventDefault()
-      }
-    },
-    { passive: false },
-  )
+  if (startButtonText) startButtonText.textContent = t.startButton
+  if (workLabel) workLabel.textContent = t.workLabel
+  if (githubLabel) githubLabel.textContent = t.githubLabel
+  if (educationLabel) educationLabel.textContent = t.educationLabel
+  if (skillsLabel) skillsLabel.textContent = t.skillsLabel
+  if (contactLabel) contactLabel.textContent = t.contactLabel
+  if (photosLabel) photosLabel.textContent = t.photosLabel
+  if (musicLabel) musicLabel.textContent = t.musicLabel
+  if (languageLabel) languageLabel.textContent = t.languageLabel
+  if (trashLabel) trashLabel.textContent = t.trashLabel
 }
 
 function toggleLanguage() {
   currentLanguage = currentLanguage === "es" ? "en" : "es"
   localStorage.setItem("language", currentLanguage)
   updateTexts()
-  updateDesktopLinks()
   startTypingAnimation()
 }
 
@@ -153,25 +135,6 @@ function showDesktop() {
   document.getElementById("desktopScreen").classList.add("active")
 }
 
-function initializeApp() {
-  const urlParams = new URLSearchParams(window.location.search)
-  const langParam = urlParams.get("lang")
-  if (langParam) {
-    currentLanguage = langParam
-    localStorage.setItem("language", currentLanguage)
-  }
-
-  updateTexts()
-  setupEventListeners()
-  updateDesktopLinks()
-  startTypingAnimation()
-  updateClock()
-  setInterval(updateClock, 1000)
-
-  // Add floating effects
-  addFloatingEffects()
-}
-
 function addFloatingEffects() {
   setInterval(() => {
     if (Math.random() < 0.1) {
@@ -207,4 +170,17 @@ function addFloatingElement(emoji, duration = 3000) {
   }, duration)
 }
 
-document.addEventListener("DOMContentLoaded", initializeApp)
+// Inicialización
+document.addEventListener("DOMContentLoaded", () => {
+  updateTexts()
+  startTypingAnimation()
+  updateClock()
+  setInterval(updateClock, 1000)
+  addFloatingEffects()
+
+  // Event listeners
+  const loginButton = document.getElementById("loginButton")
+  if (loginButton) {
+    loginButton.addEventListener("click", showDesktop)
+  }
+})

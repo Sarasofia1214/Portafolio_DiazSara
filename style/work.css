@@ -1,0 +1,381 @@
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Neue", cursive;
+  background: linear-gradient(135deg, #ffeef8, #e8f4fd, #f0e8ff);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffeef8, #e8f4fd, #f0e8ff);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Marco de ventana */
+.window-frame {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideIn 0.5s ease;
+}
+
+.window-header {
+  background: linear-gradient(135deg, #dda0dd, #e6e6fa);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.close-btn {
+  background: #ff5f57;
+}
+
+.minimize-btn {
+  background: #ffbd2e;
+}
+
+.maximize-btn {
+  background: #28ca42;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+}
+
+.window-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  flex: 1;
+}
+
+.window-spacer {
+  width: 76px;
+}
+
+.window-content {
+  padding: 30px;
+  max-height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+/* Contenido específico de habilidades */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.skills-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(147, 112, 219, 0.3);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-emoji {
+  font-size: 30px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.skill-info {
+  text-align: center;
+}
+
+.skill-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.skill-level {
+  background: rgba(147, 112, 219, 0.2);
+  color: #333;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.soft-skill-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 192, 203, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.soft-skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Elementos flotantes */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  filter: blur(2px);
+}
+
+.cloud-1 {
+  width: 150px;
+  height: 80px;
+  top: 10%;
+  left: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cloud-2 {
+  width: 120px;
+  height: 60px;
+  top: 20%;
+  right: 15%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.cloud-3 {
+  width: 180px;
+  height: 90px;
+  bottom: 30%;
+  left: 5%;
+  animation: float 7s ease-in-out infinite;
+}
+
+.star {
+  position: absolute;
+  font-size: 24px;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 15%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 25%;
+  right: 30%;
+  animation-delay: 0.5s;
+}
+
+.star-3 {
+  bottom: 35%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+.star-4 {
+  bottom: 25%;
+  right: 25%;
+  animation-delay: 1.5s;
+}
+
+.star-5 {
+  top: 50%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .window-frame {
+    margin: 10px;
+    max-height: 95vh;
+  }
+
+  .window-content {
+    padding: 20px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .soft-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .skill-emoji {
+    font-size: 25px;
+  }
+
+  .skill-name {
+    font-size: 14px;
+  }
+
+  .skill-level {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 10px;
+  }
+
+  .window-content {
+    padding: 15px;
+  }
+
+  .skill-card,
+  .soft-skill-card {
+    padding: 15px;
+  }
+
+  .skill-emoji {
+    font-size: 22px;
+  }
+
+  .skill-name {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(147, 112, 219, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 112, 219, 0.7);
+}
