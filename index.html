@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe OS - Portfolio Kawaii</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de Login -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-background">
+            <!-- Elementos decorativos de fondo -->
+            <div class="floating-elements">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+                <div class="star star-1">⭐</div>
+                <div class="star star-2">✨</div>
+                <div class="star star-3">🌟</div>
+            </div>
+            
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="avatar">
+                        <span class="avatar-icon">👤</span>
+                        <div class="avatar-sparkle">✨</div>
+                    </div>
+                    <h1 class="login-title" id="loginTitle">Bienvenido a John Doe OS 🌈</h1>
+                </div>
+                <div class="login-content">
+                    <div class="typing-text">
+                        <p id="typingText" class="typing-animation"></p>
+                    </div>
+                    <div class="login-form">
+                        <input type="text" id="usernameInput" placeholder="Ingresa tu nombre" value="John Doe" class="login-input">
+                        <button id="loginButton" class="login-button">
+                            <span id="loginButtonText">Entrar al Escritorio ✨</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Escritorio -->
+    <div id="desktopScreen" class="screen">
+        <div class="desktop-background">
+            <!-- Elementos decorativos de fondo -->
+            <div class="floating-elements">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+                <div class="star star-1">⭐</div>
+                <div class="star star-2">✨</div>
+                <div class="star star-3">🌟</div>
+                <div class="star star-4">💫</div>
+                <div class="star star-5">🌈</div>
+            </div>
+
+            <!-- Íconos del escritorio -->
+            <div class="desktop-icons">
+                <div class="desktop-icon" data-window="work" style="top: 15%; left: 15%;">
+                    <div class="icon-container">
+                        <div class="folder-icon">📁</div>
+                        <div class="icon-overlay">💼</div>
+                    </div>
+                    <span class="icon-label" id="workLabel">Experiencia Laboral</span>
+                </div>
+
+                <div class="github">
+                    <div class="icon-container">
+                        <div class="icono"><img class="iconogit" src="./storage/img/iconogit.jfif" alt=""></div>
+                    </div>
+                    <span class="icon-label" id="githubLabel">Mis Proyectos</span>
+                </div>
+
+                <div class="desktop-icon" data-window="education" style="top: 15%; left: 55%;">
+                    <div class="icon-container">
+                        <div class="folder-icon">📁</div>
+                        <div class="icon-overlay">🎓</div>
+                    </div>
+                    <span class="icon-label" id="educationLabel">Educación</span>
+                </div>
+
+                <div class="desktop-icon" data-window="skills" style="top: 35%; left: 15%;">
+                    <div class="icon-container">
+                        <div class="folder-icon">📁</div>
+                        <div class="icon-overlay">🛠️</div>
+                    </div>
+                    <span class="icon-label" id="skillsLabel">Habilidades</span>
+                </div>
+
+                <div class="desktop-icon" data-window="contact" style="top: 35%; left: 35%;">
+                    <div class="icon-container">
+                        <div class="file-icon">📄</div>
+                        <div class="icon-overlay">💌</div>
+                    </div>
+                    <span class="icon-label" id="contactLabel">Contáctame</span>
+                </div>
+
+                <div class="desktop-icon" data-window="photos" style="top: 35%; left: 55%;">
+                    <div class="icon-container">
+                        <div class="folder-icon">📁</div>
+                        <div class="icon-overlay">🖼️</div>
+                    </div>
+                    <span class="icon-label" id="photosLabel">Galería de Fotos</span>
+                </div>
+
+                <div class="desktop-icon" data-window="music" style="top: 55%; left: 15%;">
+                    <div class="icon-container">
+                        <div class="file-icon">📄</div>
+                        <div class="icon-overlay">🎵</div>
+                    </div>
+                    <span class="icon-label" id="musicLabel">Música Favorita</span>
+                </div>
+
+                <div class="desktop-icon language-icon" style="top: 55%; left: 35%;">
+                    <div class="icon-container">
+                        <div class="file-icon">📄</div>
+                        <div class="icon-overlay">🌍</div>
+                    </div>
+                    <span class="icon-label" id="languageLabel">Idioma</span>
+                </div>
+
+                <!-- Papelera -->
+                <div class="desktop-icon trash-icon" style="bottom: 32px; right: 48px;">
+                    <div class="icon-container">
+                        <div class="trash-icon-img">🗑️</div>
+                    </div>
+                    <span class="icon-label" id="trashLabel">Papelera</span>
+                </div>
+            </div>
+
+            <!-- Barra de tareas -->
+            <div class="taskbar">
+                <button id="startButton" class="start-button">
+                    <span id="startButtonText">🌟 Inicio</span>
+                </button>
+
+                <div class="taskbar-apps">
+                    <button class="taskbar-app" data-window="work">💼</button>
+                    <button class="taskbar-app" data-window="github">🐙</button>
+                    <button class="taskbar-app" data-window="education">🎓</button>
+                    <button class="taskbar-app" data-window="skills">🛠️</button>
+                    <button class="taskbar-app" data-window="contact">💌</button>
+                </div>
+
+                <div class="system-tray">
+                    <span class="tray-icon">🔊</span>
+                    <span class="tray-icon">📶</span>
+                    <span class="tray-icon">🔋</span>
+                    <div class="clock">
+                        <div id="currentTime">12:00</div>
+                        <div id="currentDate">01/01/2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menú de inicio -->
+            <div id="startMenu" class="start-menu hidden">
+                <div class="start-menu-header">
+                    <div class="user-info">
+                        <div class="user-avatar">👤</div>
+                        <div class="user-details">
+                            <div class="user-name">John Doe</div>
+                            <div class="user-title" id="userTitle">Desarrollador Mágico</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="start-menu-separator"></div>
+                <div class="start-menu-apps">
+                    <div class="start-menu-item" data-window="work">
+                        <span class="menu-icon">💼</span>
+                        <span id="menuWork">Trabajo</span>
+                    </div>
+                    <div class="start-menu-item" data-window="github">
+                        <span class="menu-icon">🐙</span>
+                        <span id="menuProjects">Proyectos</span>
+                    </div>
+                    <div class="start-menu-item" data-window="education">
+                        <span class="menu-icon">🎓</span>
+                        <span id="menuEducation">Educación</span>
+                    </div>
+                    <div class="start-menu-item" data-window="skills">
+                        <span class="menu-icon">🛠️</span>
+                        <span id="menuSkills">Habilidades</span>
+                    </div>
+                    <div class="start-menu-item" data-window="contact">
+                        <span class="menu-icon">💌</span>
+                        <span id="menuContact">Contacto</span>
+                    </div>
+                </div>
+                <div class="start-menu-separator"></div>
+                <div class="start-menu-system">
+                    <div class="start-menu-item language-menu-item">
+                        <span class="menu-icon">🌍</span>
+                        <span id="menuLanguage">Idioma: Español</span>
+                    </div>
+                    <div class="start-menu-item">
+                        <span class="menu-icon">⚙️</span>
+                        <span id="menuSettings">Configuración</span>
+                    </div>
+                    <div class="start-menu-item shutdown-item">
+                        <span class="menu-icon">⏻</span>
+                        <span id="menuShutdown">Apagar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventanas modales -->
+    <div id="windowContainer"></div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
