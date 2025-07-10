@@ -15,7 +15,7 @@
         
         body {
         
-            background-image: url(/storage/img/fondo.png);
+            background-image: url(../storage/img/fondo.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
