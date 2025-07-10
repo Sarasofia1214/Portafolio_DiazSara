@@ -58,7 +58,7 @@
         }
         
         .portafolio_img{
-            width: 90%;
+            width: 40%;
             max-width: 55%;
             height: auto;
             object-fit: contain;
@@ -79,11 +79,11 @@
             padding: 1rem;
             border-radius: 1rem;
             width: 100%;
-            margin-bottom: 1rem;
+           
         }
         
         .text{
-            font-size: 2vw;
+            font-size: 1.7vw;
             text-align: center;
             padding: 1rem;
             font-family: "font1";
@@ -156,6 +156,7 @@
           margin-top: 1vw;
           font-size: 1vw;
           font-family: "font2";
+          justify-content: space-between;
         }
         /* Media Queries para dispositivos específicos */
         @media (max-width: 768px) {
