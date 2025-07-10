@@ -1,46 +1,224 @@
-* {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
 
-  }
-  
-  body {
-    font-family: "Comic Neue";
-    background-image: url(/storage/img/fondo.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    height: fit-content;
-    overflow-x: hidden;
-}
-  .login_container{
-    background-color: rgba(241, 181, 181, 0.4);
-    padding: 25vw;
-    margin: 3vw;
-    margin-top: 20vw;
-    border-radius: 10vw;
-    height: 20vw;
-  }
-
-  .login_bienvenida_text{
-    padding: 6vw;
-    display: flex;
-    text-align: center;
-    font-size: 4vw;
-    padding-bottom: 0;
-    padding-top: 12vw;
-  }
-
-  .img_container{
-    width: 60vw;
-  }
-  .portafolio_img{
-    width: 49vw;
-    height: 33vw;
-    margin-top: -20vw;
-    position: absolute;
- 
-  }
+        @font-face {
+            font-family: "font1";
+            src: url(../storage/fonts/Ragna.ttf);
+        }
+        @font-face {
+            font-family: "font2";
+            src: url(../storage/fonts/Milkalte.otf);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Comic Neue";
+            background-image: url(/storage/img/fondo.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            height: fit-content;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .login_container{
+            background-color: rgba(233, 160, 160, 0.4);
+            border-radius: 2rem;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            padding: 2rem;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 5px 5px 10px rgba(113, 7, 7, 0.3);
+        }
+        
+        .login_header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1vw;
+        }
+        
+        .img_container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .portafolio_img{
+            width: 90%;
+            max-width: 55%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .login_bienvenida {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .login_bienvenida_text{
+            font-family: "font2";
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            padding: 1rem;
+            border-radius: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        
+        .text{
+            font-size: 2vw;
+            text-align: center;
+            padding: 1rem;
+            font-family: "font1";
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid;
+            animation: typing 3s steps(20, end), blink-caret 0.70s step-end infinite;
+        }
+         @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+        
+        .entrar_buttom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .entrar_login{
+            color: black;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2vw;
+            padding: 1rem 2rem;
+            font-size:3vw;
+            cursor: pointer;
+            font-family: "font1";
+            transition: transform 0.2s ease;
+            border: none;
+            display: inline-block;
+        }
+        
+        
+        .entrar_buttom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .entrar_login{
+            color: black;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2rem;
+            padding: 1rem 2rem;
+            font-size: 2vw;
+            cursor: pointer;
+            font-family: "font1";
+            transition: transform 0.2s ease;
+            border: none;
+            display: inline-block;
+        }
+        
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        
+        .entrar_login:hover{
+            transform: scale(1.1);
+        }
+        .text2{
+          text-align: center;
+          margin-top: 1vw;
+          font-size: 1vw;
+          font-family: "font2";
+        }
+        /* Media Queries para dispositivos específicos */
+        @media (max-width: 768px) {
+            .login_container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            
+            .portafolio_img {
+                width: 70%;
+                max-width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 0.5rem;
+            }
+            
+            .login_container {
+                padding: 1rem;
+                margin: 0.5rem;
+                min-height: 350px;
+            }
+            
+            .portafolio_img {
+                width: 60%;
+                max-width: 150px;
+            }
+            
+            .login_bienvenida_text {
+                padding: 0.8rem;
+            }
+            
+            .text {
+                padding: 0.8rem;
+            }
+            
+            .entrar_login {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .login_container {
+                padding: 0.8rem;
+                min-height: 300px;
+            }
+            
+            .portafolio_img {
+                width: 50%;
+                max-width: 120px;
+            }
+        }
+        
+        /* Para pantallas muy grandes */
+        @media (min-width: 1200px) {
+            .login_container {
+                max-width: 600px;
+                padding: 3rem;
+            }
+            
+            .portafolio_img {
+                max-width: 300px;
+            }
+        }
