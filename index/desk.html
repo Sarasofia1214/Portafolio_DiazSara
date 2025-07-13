@@ -7,121 +7,98 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-        <!-- Pantalla del Escritorio -->
-        <div id="desktopScreen" class="screen active">
-            <div class="desktop-background">
-                <!-- Elementos flotantes -->
-                <div class="floating-elements">
-                    <div class="cloud cloud-1"></div>
-                    <div class="cloud cloud-2"></div>
-                    <div class="cloud cloud-3"></div>
-                
+    <!-- Pantalla del Escritorio -->
+    <div id="desktopScreen" class="screen active">
+        <div class="desktop-icons">
+            <!-- Fila 1 -->
+            <div class="experiencia">
+                <a href="/index/work.html">
+                    <div class="desktop_experiencia_container">
+                        <div class="desktop_experiencia_icon">
+                            <img class="experiencia_img" src="/storage/img/experiencia.png" alt="">
+                        </div>
+                    </div>
+                    <div class="icon_text">Experiencia Laboral</div>
+                </a>
+            </div>
+            
+            <div class="git">
+                <a href="/index/projects.html">
+                    <div class="desktop_git_container">
+                        <div class="desktop_git_icon">
+                            <img class="git_img" src="../storage/img/github.png" alt="">
+                        </div>
+                    </div>
+                    <div class="icon_text">Github</div>
+                </a>
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="perfil">
+                <a href="/index/skills.html">
+                    <div class="desktop_perfil_container">
+                        <div class="desktop_perfil_icon">
+                            <img class="perfil_img" src="../storage/img/13976496.png" alt="">
+                        </div>
+                    </div>
+                    <div class="icon_text">Perfil</div>
+                </a>
+            </div>
+
+            <div class="contacto">
+                <a href="/index/contact.html">
+                    <div class="desktop_contacto_container">
+                        <div class="desktop_contacto_icon">
+                            <img class="contacto_img" src="../storage/img/correo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="icon_text">Contacto</div>
+                </a>
+            </div>
+
+            <div class="habilidades">
+                <a href="/index/skills.html">
+                    <div class="desktop_habilidades_container">
+                        <div class="desktop_habilidades_icon">
+                            <img class="habilidades_img" src="../storage/img/ChatGPT Image 13 jul 2025, 13_47_22.png" alt="">
+                        </div>
+                    </div>
+                    <div class="icon_text">Habilidades</div>
+                </a>
+            </div>
+
+            <div class="desktop-icon language-icon" style="top: 400px; left: 240px;" onclick="toggleLanguage()">
+                <div class="icon-container">
+                    <div class="file-icon">🌐</div>
                 </div>
-    
-                <!-- Íconos del escritorio -->
-                <div class="desktop-icons">
-                    <!-- Fila 1 -->
-                    <div class="experiencia">
-                    <a href="/index/work.html" >
-                        <div class="desktop_experiencia_container">
-                            <div class="desktop_experiencia_icon">
-                                <img class="experiencia_img" src="/storage/img/experiencia.png" alt="">
-                            </div>
-                        </div>
-                        <div id="workLabel" class="icon_text">Experiencia Laboral</div>
-                    </a>
-                    </div>
-    
-                    <a href="/index/projects.html" class="desktop-icon" style="top: 80px; left: 240px;">
-                        <div class="icon-container">
-                            <div class="folder-icon">📁</div>
-                            <div class="icon-overlay">🚀</div>
-                        </div>
-                        <div id="githubLabel" class="icon-label">Mis Proyectos</div>
-                    </a>
-    
-                    <a href="/index/education.html" class="desktop-icon" style="top: 80px; left: 400px;">
-                        <div class="icon-container">
-                            <div class="folder-icon">📁</div>
-                            <div class="icon-overlay">🎓</div>
-                        </div>
-                        <div id="educationLabel" class="icon-label">Educación</div>
-                    </a>
-    
-                    <!-- Fila 2 -->
-                    <a href="/index/skills.html" class="desktop-icon" style="top: 240px; left: 80px;">
-                        <div class="icon-container">
-                            <div class="folder-icon">📁</div>
-                            <div class="icon-overlay">🛠️</div>
-                        </div>
-                        <div id="skillsLabel" class="icon-label">Habilidades</div>
-                    </a>
-    
-                    <a href="/index/contact.html" class="desktop-icon" style="top: 240px; left: 240px;">
-                        <div class="icon-container">
-                            <div class="folder-icon">📁</div>
-                            <div class="icon-overlay">💌</div>
-                        </div>
-                        <div id="contactLabel" class="icon-label">Contáctame</div>
-                    </a>
-    
-                    <div class="desktop-icon" style="top: 240px; left: 400px;">
-                        <div class="icon-container">
-                            <div class="folder-icon">📁</div>
-                            <div class="icon-overlay">📸</div>
-                        </div>
-                        <div id="photosLabel" class="icon-label">Galería de Fotos</div>
-                    </div>
-    
-                    <!-- Fila 3 -->
-                    <div class="desktop-icon" style="top: 400px; left: 80px;">
-                        <div class="icon-container">
-                            <div class="file-icon">🎵</div>
-                        </div>
-                        <div id="musicLabel" class="icon-label">Música Favorita</div>
-                    </div>
-    
-                    <div class="desktop-icon language-icon" style="top: 400px; left: 240px;" onclick="toggleLanguage()">
-                        <div class="icon-container">
-                            <div class="file-icon">🌐</div>
-                        </div>
-                        <div id="languageLabel" class="icon-label">Idioma</div>
-                    </div>
-    
-                    <div class="desktop-icon" style="top: 400px; left: 400px;">
-                        <div class="icon-container">
-                            <div class="trash-icon-img">🗑️</div>
-                        </div>
-                        <div id="trashLabel" class="icon-label">Papelera</div>
-                    </div>
-                </div>
-    
-                <!-- Barra de tareas -->
-                <div class="taskbar">
-                    <a href="/index/star.html" class="start-button">
-                        <span id="startButtonText">🌟 Inicio</span>
-                    </a>
-                    <div class="taskbar-apps">
-                        <a href="/index/work.html" class="taskbar-app">💼</a>
-                        <a href="/index/projects.html" class="taskbar-app">🚀</a>
-                        <a href="/index/education.html" class="taskbar-app">🎓</a>
-                        <a href="/index/skills.html" class="taskbar-app">🛠️</a>
-                        <a href="/index/contact.html" class="taskbar-app">💌</a>
-                    </div>
-                    <div class="system-tray">
-                        <span class="tray-icon">🔊</span>
-                        <span class="tray-icon">📶</span>
-                        <div class="clock">
-                            <div id="currentTime">12:00</div>
-                            <div id="currentDate">01/01/2024</div>
-                        </div>
-                    </div>
+                <div id="languageLabel" class="icon-label">Idioma</div>
+            </div>
+        </div>
+
+        <!-- Barra de tareas -->
+        <div class="taskbar">
+            <a href="/index/star.html" class="start-button">
+                <span id="startButtonText">🌟 Inicio</span>
+            </a>
+            <div class="taskbar-apps">
+                <a href="/index/work.html" class="taskbar-app">💼</a>
+                <a href="/index/projects.html" class="taskbar-app">🚀</a>
+                <a href="/index/education.html" class="taskbar-app">🎓</a>
+                <a href="/index/skills.html" class="taskbar-app">🛠️</a>
+                <a href="/index/contact.html" class="taskbar-app">💌</a>
+            </div>
+            <div class="system-tray">
+                <span class="tray-icon">🔊</span>
+                <span class="tray-icon">📶</span>
+                <div class="clock">
+                    <div id="currentTime">12:00</div>
+                    <div id="currentDate">01/01/2024</div>
                 </div>
             </div>
         </div>
-    
-        <script src="/js/common.js"></script>
-        <script src="/js/desktop.js"></script>
-    </body>
-    </html>
-    
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/desktop.js"></script>
+</body>
+</html>
