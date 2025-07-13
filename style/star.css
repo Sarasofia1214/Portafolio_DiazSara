@@ -1,0 +1,448 @@
+/* Estilos para el Menú de Inicio - John Doe OS */
+
+/* Variables CSS para consistencia */
+:root {
+    --primary-color: #0078d4;
+    --primary-hover: #106ebe;
+    --secondary-color: #f3f2f1;
+    --text-color: #323130;
+    --text-light: #605e5c;
+    --border-color: #e1dfdd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-strong: rgba(0, 0, 0, 0.2);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* Fuente principal */
+body {
+    font-family: 'Comic Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.page-container.start-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+/* Efecto de desenfoque de fondo */
+.page-container.start-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+/* Menú de inicio en pantalla completa */
+.start-menu-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Contenedor del menú */
+.start-menu-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    height: 85%;
+    max-height: 700px;
+    padding: 30px;
+    box-shadow: 0 20px 40px var(--shadow-strong);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { 
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Botón de cerrar */
+.close-start-menu {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.close-start-menu span {
+    font-size: 24px;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+.close-start-menu:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Header del menú */
+.start-menu-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.user-info-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.user-avatar-large {
+    font-size: 60px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 50%;
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.user-details {
+    text-align: left;
+}
+
+.user-name-large {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.user-title-large {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* Separador */
+.start-menu-separator {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 25px 0;
+}
+
+/* Grid del menú */
+.start-menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    height: calc(100% - 200px);
+    overflow-y: auto;
+}
+
+/* Secciones del menú */
+.start-menu-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-start {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Items del menú */
+.start-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.start-menu-item-large {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    gap: 15px;
+}
+
+.start-menu-item-large:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.menu-icon-large {
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    flex-shrink: 0;
+}
+
+.menu-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.menu-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.menu-description {
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* Estilos especiales para algunos items */
+.language-menu-item:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.shutdown-item:hover {
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.shutdown-item:hover .menu-icon-large {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+/* Footer del menú */
+.start-menu-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.system-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.system-time {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.system-time div {
+    font-size: 14px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.system-status {
+    display: flex;
+    gap: 10px;
+}
+
+.status-icon {
+    font-size: 18px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.status-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Scrollbar personalizada */
+.start-menu-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.start-menu-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.start-menu-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.start-menu-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .start-menu-container {
+        width: 95%;
+        height: 95%;
+        padding: 20px;
+    }
+    
+    .start-menu-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .user-info-large {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .user-details {
+        text-align: center;
+    }
+    
+    .user-avatar-large {
+        font-size: 50px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .user-name-large {
+        font-size: 24px;
+    }
+    
+    .menu-icon-large {
+        font-size: 28px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .menu-title {
+        font-size: 15px;
+    }
+    
+    .menu-description {
+        font-size: 12px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.start-menu-item-large:active {
+    animation: pulse 0.2s ease-in-out;
+}
+
+/* Efectos de glass morphism más pronunciados */
+.start-menu-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+/* Efectos de hover mejorados */
+.start-menu-item-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.start-menu-item-large:hover::before {
+    opacity: 1;
+}
+
+/* Efecto de partículas flotantes (opcional) */
+.start-menu-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px, 60px 60px;
+    animation: float 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
