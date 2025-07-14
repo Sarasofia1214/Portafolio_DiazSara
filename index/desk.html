@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <!-- Pantalla del Escritorio -->
+  
     <div id="desktopScreen" class="screen active">
         <div class="desktop-icons">
-            <!-- Fila 1 -->
+          
             <div class="experiencia">
-                <a href="/index/work.html">
+                <a href="../index/work.html" class="desktop-link" >
                     <div class="desktop_experiencia_container">
                         <div class="desktop_experiencia_icon">
-                            <img class="experiencia_img" src="/storage/img/experiencia.png" alt="">
+                            <img class="experiencia_img" src="../storage/img/experiencia.png" alt="">
                         </div>
                     </div>
-                    <div class="icon_text">Experiencia Laboral</div>
+                    <div class="icon_text"></div>
                 </a>
             </div>
             
             <div class="git">
-                <a href="/index/projects.html">
+                <a href="../index/projects.html" class="desktop-link" >
                     <div class="desktop_git_container">
                         <div class="desktop_git_icon">
                             <img class="git_img" src="../storage/img/github.png" alt="">
@@ -33,20 +33,20 @@
                 </a>
             </div>
 
-            <!-- Fila 2 -->
+           
             <div class="perfil">
-                <a href="/index/skills.html">
+                <a href="../index/education.html" class="desktop-link">
                     <div class="desktop_perfil_container">
                         <div class="desktop_perfil_icon">
                             <img class="perfil_img" src="../storage/img/13976496.png" alt="">
                         </div>
                     </div>
-                    <div class="icon_text">Perfil</div>
+                    <div class="icon_text">Educación</div>
                 </a>
             </div>
 
             <div class="contacto">
-                <a href="/index/contact.html">
+                <a href="../index/contact.html" class="desktop-link" >
                     <div class="desktop_contacto_container">
                         <div class="desktop_contacto_icon">
                             <img class="contacto_img" src="../storage/img/correo.png" alt="">
@@ -57,7 +57,7 @@
             </div>
 
             <div class="habilidades">
-                <a href="/index/skills.html">
+                <a href="../index/skills.html" class="desktop-link">
                     <div class="desktop_habilidades_container">
                         <div class="desktop_habilidades_icon">
                             <img class="habilidades_img" src="../storage/img/ChatGPT Image 13 jul 2025, 13_47_22.png" alt="">
@@ -67,10 +67,11 @@
                 </a>
             </div>
 
-            <div class="desktop-iconlanguage-icon"  onclick="toggleLanguage()">
+            <div class="desktop-iconlanguage-icon" onclick="toggleLanguage()">
                 <div class="icon-container">
                     <div class="file-icon">
-                        <img class="language_img" src="../storage/img/ChatGPT Image 13 jul 2025, 13_47_22.png" alt=""></div>
+                        <img class="language_img" src="../storage/img/ChatGPT Image 13 jul 2025, 19_08_02.png" alt="">
+                    </div>
                 </div>
                 <div id="languageLabel" class="icon-label">Idioma</div>
             </div>
@@ -78,17 +79,26 @@
 
         <!-- Barra de tareas -->
         <div class="taskbar">
+            <button class="start-button" id="startButton">Iniciar</button>
             
-            <a href="/index/star.html" class="start-button">
-                <span id="startButtonText">Inicio</span>
-            </a>
             <div class="taskbar-apps">
-                <a href="/index/work.html" class="taskbar-app"><img class="experiencia_img" src="/storage/img/experiencia.png" alt=""></a>
-                <a href="/index/projects.html" class="taskbar-app"><img class="git_img" src="../storage/img/github.png" alt=""></a>
-                <a href="/index/education.html" class="taskbar-app"><img class="perfil_img" src="../storage/img/13976496.png" alt=""></a>
-                <a href="/index/skills.html" class="taskbar-app"><img class="habilidades_img" src="../storage/img/ChatGPT Image 13 jul 2025, 13_47_22.png" alt=""></a>
-                <a href="/index/contact.html" class="taskbar-app"> <img class="contacto_img" src="../storage/img/correo.png" alt=""></a>
+                <a href="../index/work.html" class="taskbar-app desktop-link" >
+                    <img class="experiencia_img" src="/storage/img/experiencia.png" alt="">
+                </a>
+                <a href="../index/projects.html" class="taskbar-app desktop-link" data-href="/index/projects.html">
+                    <img class="git_img" src="../storage/img/github.png" alt="">
+                </a>
+                <a href="../index/education.html" class="taskbar-app desktop-link" data-href="/index/education.html">
+                    <img class="perfil_img" src="../storage/img/13976496.png" alt="">
+                </a>
+                <a href="../index/skills.html" class="taskbar-app desktop-link" >
+                    <img class="habilidades_img" src="../storage/img/ChatGPT Image 13 jul 2025, 13_47_22.png" alt="">
+                </a>
+                <a href="../index/contact.html" class="taskbar-app desktop-link" >
+                    <img class="contacto_img" src="../storage/img/correo.png" alt="">
+                </a>
             </div>
+            
             <div class="system-tray">
                 <span class="tray-icon">🔊</span>
                 <span class="tray-icon">📶</span>
@@ -100,7 +110,45 @@
         </div>
     </div>
 
-    <script src="/js/common.js"></script>
+    <div class="start-menu" id="startMenu">
+        <div class="start-menu-header">
+            <div class="user-avatar">
+                <img class="user-avatar_img" src="../storage/img/13976496.png" alt="">
+            </div>
+            <div class="user-info">
+                <div class="user-name">Sara Diaz</div>
+                <div class="user-title" id="userTitle">Desarrolladora de Software</div>
+            </div>
+        </div>
+
+        <div class="menu-items">
+            <button class="menu-item" id="restartBtn">
+                <div class="menu-icon"><img class="reiniciar_img" src="../storage/img/ChatGPT Image 13 jul 2025, 19_42_45.png" alt=""></div>
+                <div class="menu-text">
+                    <div class="menu-label" id="restartLabel">Reiniciar</div>
+                    <div class="menu-description" id="restartDesc">Volver a la pantalla de inicio</div>
+                </div>
+            </button>
+
+
+            <div class="menu-item" id="languageBtn" >
+                <div class="menu-icon">
+                    <img class="language_img" src="../storage/img/ChatGPT Image 13 jul 2025, 19_08_02.png" alt="">
+                </div>
+                <div class="menu-text">
+                    <div class="menu-label" id="languageMenuLabel">Idioma</div>
+                    <div class="menu-description" id="languageDesc">Español</div>
+                </div>
+                <div class="language-selector" id="languageSelector">
+                    <div class="language-option active" data-lang="es">Español</div>
+                    <div class="language-option" data-lang="en">English</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
     <script src="/js/desktop.js"></script>
 </body>
 </html>
