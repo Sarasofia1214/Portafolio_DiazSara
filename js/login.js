@@ -1,132 +1,180 @@
-let translations = {} // Declare translations variable
-let currentLanguage = "en" // Declare currentLanguage variable
+// =========================================
+// VARIABLES Y CONFIGURACIÓN DE IDIOMA
+// =========================================
 
-function updateTexts() {
-  const t = translations[currentLanguage]
+let currentLanguage = localStorage.getItem("language") || "es";
 
-  // Login screen elements
-  const loginTitle = document.getElementById("loginTitle")
-  const loginButtonText = document.getElementById("loginButtonText")
-  const usernameInput = document.getElementById("usernameInput")
-  const passwordInput = document.getElementById("passwordInput")
-  const portfolioInfo = document.getElementById("portfolioInfo")
-  const feature1 = document.getElementById("feature1")
-  const feature2 = document.getElementById("feature2")
-  const feature3 = document.getElementById("feature3")
-  const currentLang = document.getElementById("currentLang")
-
-  if (loginTitle) loginTitle.textContent = t.welcome
-  if (loginButtonText) loginButtonText.textContent = t.loginButton
-  if (usernameInput) usernameInput.placeholder = t.username
-  if (passwordInput) passwordInput.placeholder = t.password
-  if (portfolioInfo) portfolioInfo.textContent = t.portfolioInfo
-  if (feature1) feature1.textContent = t.feature1
-  if (feature2) feature2.textContent = t.feature2
-  if (feature3) feature3.textContent = t.feature3
-  if (currentLang) currentLang.textContent = currentLanguage.toUpperCase()
-}
-
-function setupEventListeners() {
-  // Login button
-  const loginButton = document.getElementById("loginButton")
-  if (loginButton) {
-    loginButton.addEventListener("click", showDesktop)
-  }
-
-  // Prevent zoom on mobile
-  document.addEventListener(
-    "touchstart",
-    (e) => {
-      if (e.touches.length > 1) {
-        e.preventDefault()
-      }
+// Textos en diferentes idiomas
+const translations = {
+    es: {
+        title: "Portafolio",
+        workplace: "Sara's worksplace",
+        loadingText: "Cargando Escritorio Mágico ...",
+        accessButton: "Acceder",
+        tagline: "Aprendizaje | Pasión | Conexión"
     },
-    { passive: false },
-  )
-}
-
-function startTypingAnimation() {
-  const typingElement = document.getElementById("typingText")
-  if (!typingElement) return
-
-  const text = translations[currentLanguage].loadingText
-  let i = 0
-  typingElement.textContent = ""
-
-  const timer = setInterval(() => {
-    if (i < text.length) {
-      typingElement.textContent += text.charAt(i)
-      i++
-    } else {
-      clearInterval(timer)
+    en: {
+        title: "Portfolio",
+        workplace: "Sara's worksplace",
+        loadingText: "Loading Magical Desktop ...",
+        accessButton: "Access",
+        tagline: "Learning | Passion | Connection"
     }
-  }, 100)
-}
+};
 
-function showDesktop() {
-  // Redirigir al escritorio con el idioma actual
-  window.location.href = `desktop.html?lang=${currentLanguage}`
-}
+// =========================================
+// INICIALIZACIÓN
+// =========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeLanguage();
+    updateTexts();
+    updateDesktopLink();
+    addLanguageToggle();
+});
+
+// =========================================
+// FUNCIONES DE IDIOMA
+// =========================================
 
 function initializeLanguage() {
-  // Initialize language logic here
-  translations = {
-    en: {
-      welcome: "Welcome",
-      loginButton: "Login",
-      username: "Username",
-      password: "Password",
-      portfolioInfo: "Portfolio Info",
-      feature1: "Feature 1",
-      feature2: "Feature 2",
-      feature3: "Feature 3",
-      loadingText: "Loading...",
-    },
-    es: {
-      welcome: "Bienvenido",
-      loginButton: "Iniciar sesión",
-      username: "Nombre de usuario",
-      password: "Contraseña",
-      portfolioInfo: "Información del portafolio",
-      feature1: "Característica 1",
-      feature2: "Característica 2",
-      feature3: "Característica 3",
-      loadingText: "Cargando...",
-    },
-    // Add more languages as needed
-  }
-  currentLanguage = "en" // Default language
+    // Verificar si hay un parámetro de idioma en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get("lang");
+    
+    if (langParam && translations[langParam]) {
+        currentLanguage = langParam;
+        localStorage.setItem("language", currentLanguage);
+    }
+    
+    // Actualizar el atributo lang del HTML
+    document.documentElement.lang = currentLanguage;
 }
 
-function updateDesktopLinks() {
-  // Update desktop links logic here
-  const links = document.querySelectorAll(".desktop-link")
-  links.forEach((link) => {
-    link.href += `?lang=${currentLanguage}`
-  })
+function changeLanguage(lang) {
+    if (!translations[lang]) return;
+    
+    currentLanguage = lang;
+    localStorage.setItem("language", currentLanguage);
+    
+    updateTexts();
+    updateDesktopLink();
+    
+    // Actualizar el atributo lang del HTML
+    document.documentElement.lang = currentLanguage;
 }
 
-function addFloatingEffects() {
-  // Add floating effects logic here
-  const elements = document.querySelectorAll(".float")
-  elements.forEach((element) => {
-    element.style.transition = "transform 0.5s ease-in-out"
-    element.addEventListener("mouseover", () => {
-      element.style.transform = "translateY(-10px)"
-    })
-    element.addEventListener("mouseout", () => {
-      element.style.transform = "translateY(0)"
-    })
-  })
+function toggleLanguage() {
+    const newLanguage = currentLanguage === "es" ? "en" : "es";
+    changeLanguage(newLanguage);
 }
 
-function initializeLoginApp() {
-  initializeLanguage()
-  updateTexts()
-  setupEventListeners()
-  updateDesktopLinks()
-  startTypingAnimation()
-  addFloatingEffects()
+function updateTexts() {
+    const texts = translations[currentLanguage];
+    
+    // Actualizar título de la página
+    document.title = texts.title;
+    
+    // Actualizar texto de bienvenida
+    const workplaceText = document.querySelector('.login_bienvenida_text');
+    if (workplaceText) {
+        workplaceText.textContent = texts.workplace;
+    }
+    
+    // Actualizar texto de carga
+    const loadingText = document.querySelector('.text');
+    if (loadingText) {
+        loadingText.textContent = texts.loadingText;
+    }
+    
+    // Actualizar botón de acceso
+    const accessButton = document.querySelector('.entrar_login a');
+    if (accessButton) {
+        accessButton.textContent = texts.accessButton;
+    }
+    
+    // Actualizar tagline
+    const tagline = document.querySelector('.text2');
+    if (tagline) {
+        tagline.textContent = texts.tagline;
+    }
 }
 
-document.addEventListener("DOMContentLoaded", initializeLoginApp)
+function updateDesktopLink() {
+    // Actualizar el enlace del escritorio para incluir el parámetro de idioma
+    const desktopLink = document.querySelector('.entrar_login a');
+    if (desktopLink) {
+        const baseHref = './index/desk.html';
+        desktopLink.href = `${baseHref}?lang=${currentLanguage}`;
+    }
+}
+
+function addLanguageToggle() {
+    // Crear botón de cambio de idioma
+    const languageButton = document.createElement('button');
+    languageButton.innerHTML = currentLanguage === 'es' ? '🇺🇸 EN' : '🇪🇸 ES';
+    languageButton.className = 'language-toggle';
+    languageButton.title = currentLanguage === 'es' ? 'Switch to English' : 'Cambiar a Español';
+    
+    // Estilos inline para el botón
+    Object.assign(languageButton.style, {
+        position: 'fixed',
+        top: '20px',
+        right: '20px',
+        background: 'rgba(255, 255, 255, 0.9)',
+        border: 'none',
+        borderRadius: '20px',
+        padding: '8px 12px',
+        fontSize: '14px',
+        cursor: 'pointer',
+        zIndex: '1000',
+        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+        transition: 'all 0.3s ease',
+        fontFamily: 'inherit',
+        fontWeight: 'bold'
+    });
+    
+    // Efectos hover
+    languageButton.addEventListener('mouseenter', () => {
+        languageButton.style.transform = 'scale(1.1)';
+        languageButton.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+    });
+    
+    languageButton.addEventListener('mouseleave', () => {
+        languageButton.style.transform = 'scale(1)';
+        languageButton.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    });
+    
+    // Agregar evento de clic
+    languageButton.addEventListener('click', () => {
+        toggleLanguage();
+        // Actualizar texto del botón
+        languageButton.innerHTML = currentLanguage === 'es' ? '🇺🇸 EN' : '🇪🇸 ES';
+        languageButton.title = currentLanguage === 'es' ? 'Switch to English' : 'Cambiar a Español';
+    });
+    
+    // Agregar al DOM
+    document.body.appendChild(languageButton);
+}
+
+// =========================================
+// FUNCIONES DE UTILIDAD
+// =========================================
+
+// Función para obtener el idioma actual
+function getCurrentLanguage() {
+    return currentLanguage;
+}
+
+// Función para obtener las traducciones
+function getTranslations() {
+    return translations;
+}
+
+// Exportar funciones para uso global
+window.loginPage = {
+    getCurrentLanguage,
+    getTranslations,
+    toggleLanguage,
+    changeLanguage
+};
