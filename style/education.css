@@ -115,6 +115,8 @@ body {
 .img_perfil{
   width: 17vw;
   margin-left: 2vw;
+  border-bottom: 5px;
+  border-radius: 2vw;
  filter: drop-shadow(1vw 1vw 2vw rgba(0, 0, 0, 0.5));
 }
 .img_perfil:hover{
