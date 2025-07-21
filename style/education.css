@@ -113,11 +113,12 @@ body {
 }
 
 .img_perfil{
-  width: 17vw;
+  width: 15rem;
   margin-left: 2vw;
   border-bottom: 5px;
   border-radius: 2vw;
- filter: drop-shadow(1vw 1vw 2vw rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(1vw 1vw 2vw rgba(0, 0, 0, 0.5));
+  transition: width 9s, height 0s;
 }
 .img_perfil:hover{
   transform: scale(1.1);
@@ -130,7 +131,8 @@ body {
 }
 .sobremi_text{
 font-family: "font4";
-text-align: justify;
+text-align: center;
+font-size: 1.5vw;
 }
 .sobremi_title{
   font-family: "Font2";
@@ -138,7 +140,7 @@ text-align: justify;
   line-height: 3vw;
   font-weight: 200;
   font-size: 2vw;
-    padding-bottom: 1vw;
+  padding-bottom: 1vw;
 
 }
 
@@ -184,8 +186,6 @@ text-align: center;
 }
 
 
-
-
 /* Animaciones */
 @keyframes slideIn {
   from {
@@ -198,27 +198,7 @@ text-align: center;
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
 
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -235,10 +215,6 @@ text-align: center;
     grid-template-columns: 1fr;
   }
 
-  .contact-emoji {
-    font-size: 25px;
-    margin-right: 10px;
-  }
 
   .contact-title {
     font-size: 15px;
@@ -262,9 +238,6 @@ text-align: center;
     padding: 15px;
   }
 
-  .contact-emoji {
-    font-size: 22px;
-  }
 
   .contact-title {
     font-size: 14px;
@@ -279,21 +252,3 @@ text-align: center;
   }
 }
 
-/* Scrollbar personalizado */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 192, 203, 0.5);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 192, 203, 0.7);
-}
