@@ -1,0 +1,155 @@
+   @font-face {
+            font-family: "font1";
+            src: url(../storage/fonts/Ragna.ttf);
+        }
+        @font-face {
+            font-family: "font2";
+            src: url(../storage/fonts/Milkalte.otf);
+        }/* Reset y configuración base */
+        @font-face {
+          font-family: "font3";
+          src: url(../storage/fonts/Lato-Light.ttf);
+        }
+        @font-face {
+          font-family: "font4";
+          src: url(../storage/fonts/Lato-Regular.ttf);
+        }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background: linear-gradient(135deg, #ffeef8, #e8f4fd, #f0e8ff);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffeef8, #e8f4fd, #f0e8ff);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Marco de ventana */
+.window-frame {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideIn 0.5s ease;
+}
+
+.window-header {
+  background: linear-gradient(135deg, #ffc0cb, #e6e6fa);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.close-btn {
+  background: #ff5f57;
+}
+
+.minimize-btn {
+  background: #ffbd2e;
+}
+
+.maximize-btn {
+  background: #28ca42;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+}
+
+.window-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  flex: 1;
+}
+
+.window-spacer {
+  width: 76px;
+}
+
+.window-content {
+  padding: 30px;
+  max-height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .window-frame {
+    margin: 10px;
+    max-height: 95vh;
+  }
+
+  .window-content {
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 10px;
+  }
+
+  .window-content {
+    padding: 15px;
+  }
+
+}
