@@ -1,21 +1,20 @@
-   @font-face {
-            font-family: "font1";
-            src: url(../storage/fonts/Ragna.ttf);
-        }
-        @font-face {
-            font-family: "font2";
-            src: url(../storage/fonts/Milkalte.otf);
-        }/* Reset y configuración base */
-        @font-face {
-          font-family: "font3";
-          src: url(../storage/fonts/Lato-Light.ttf);
-        }
-        @font-face {
-          font-family: "font4";
-          src: url(../storage/fonts/Lato-Regular.ttf);
-        }
 
-
+@font-face {
+  font-family: "font1";
+  src: url(../storage/fonts/Ragna.ttf);
+}
+@font-face {
+  font-family: "font2";
+  src: url(../storage/fonts/Milkalte.otf);
+}
+@font-face {
+  font-family: "font3";
+  src: url(../storage/fonts/Lato-Light.ttf);
+}
+@font-face {
+  font-family: "font4";
+  src: url(../storage/fonts/Lato-Regular.ttf);
+}
 
 * {
   margin: 0;
@@ -47,7 +46,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 3px solid rgba(255, 255, 255, 0.3);
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px; 
   max-height: 90vh;
   overflow: hidden;
   animation: slideIn 0.5s ease;
@@ -67,25 +66,19 @@ body {
   gap: 8px;
 }
 
-.control-btn {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: white;
-}
-
 .close-btn {
   background: #ff5f57;
 }
 
+.control-btn {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-indent: -9999px;
+  overflow: hidden;
+}
 
 .control-btn:hover {
   transform: scale(1.1);
@@ -95,14 +88,12 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #ffffff;
-  text-align:center;
+  text-align: center;
   justify-content: center;
   flex: 1;
-  letter-spacing: 1VW;
-  font-family: "fONT1";
+  letter-spacing: 1vw;
+  font-family: "font1";
 }
-
-
 
 .window-content {
   padding: 30px;
@@ -110,62 +101,108 @@ body {
   overflow-y: auto;
 }
 
-.python, .html, .css, .git, .js, .mysql, .mongo{
-   cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 1vw;
+
+.header_container {
   text-align: center;
 }
-.skills_container_firstline{
+
+.skills_container_firstline, .skills_container_secondline {
   display: flex;
   flex-direction: row;
-  justify-content:2vw space-between;
-  padding: 1vw;
-  margin-bottom: 1.5vw;
+  justify-content: center;
+  gap: 4vw; 
+  padding: 2vw 0;
+}
+
+.python, .html, .css, .git, .mongo, .mysql {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.skills_container_firstline:hover >:not(:hover){
-filter: blur(5px);
-opacity: 0.5;
-}
-.skills_container_secondline{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 1vw;
-}
-.skills_container_secondline:hover >:not(:hover){
-filter: blur(5px);
-opacity: 0.5;
-}
-.header_container:hover >:not(:hover){
+
+.skills_container_firstline:hover > :not(:hover),
+.skills_container_secondline:hover > :not(:hover) {
   filter: blur(5px);
-opacity: 0.5;
+  opacity: 0.5;
+} 
+.header_container:hover > :not(:hover){
+  filter: blur(5px);
+  opacity: 0.5;
 }
-.python:hover> :not(:hover), .mysql:hover> :not(:hover) ,.html:hover> :not(:hover) , .css:hover> :not(:hover) , .git:hover> :not(:hover) , .js:hover> :not(:hover)  , .mongo:hover> :not(:hover) {
-filter: blur(5px);
-opacity: 0.5;
-}
-.python_img, .html_img, .css_img, .js_img, .git_img, .mongo_img, .mysql_img{
-  width: 13vw;
-  height: 13vw;
-}
-p{
-  font-family: "Font4";
-  font-size: large;
-  font-size: 2vw;
+.python_img, .html_img, .css_img, .git_img, .mongo_img, .mysql_img {
+  width: 15vw; 
+  max-width: 200px; 
+  max-height: 200px;
+  transition: transform 0.3s ease;
 }
 
-/* Animaciones */
+.python:hover .python_img, .html:hover .html_img, .css:hover .css_img,
+.git:hover .git_img, .mongo:hover .mongo_img, .mysql:hover .mysql_img {
+  transform: scale(1.1);
+}
+
+p {
+  font-family: "font4";
+  font-size: 2.5vw; 
+  margin-top: 10px; 
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .window-title {
+      letter-spacing: 0.5vw;
+      font-size: 1.5rem;
+  }
+  
+  .skills_container_firstline, .skills_container_secondline {
+      gap: 2vw;
+  }
+
+  .python_img, .html_img, .css_img, .git_img, .mongo_img, .mysql_img {
+      width: 18vw;
+      height: 18vw;
+  }
+  
+  p {
+      font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .window-frame {
+      border-radius: 15px;
+  }
+  .window-header {
+      padding: 10px 15px;
+  }
+
+  .skills_container_firstline, .skills_container_secondline {
+      flex-direction: column;
+      gap: 30px;
+      padding: 15px 0;
+  }
+
+  .python_img, .html_img, .css_img, .git_img, .mongo_img, .mysql_img {
+      width: 40vw; 
+      height: 40vw;
+  }
+
+  p {
+      font-size: 5vw;
+  }
+}
+
 @keyframes slideIn {
   from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
   }
   to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+      opacity: 1;
+      transform: translateY(0) scale(1);
   }
 }

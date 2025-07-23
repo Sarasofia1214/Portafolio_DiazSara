@@ -21,8 +21,8 @@
   box-sizing: border-box;
 }
 
+
 body {
-  font-family: "Comic Neue", cursive;
   background: linear-gradient(135deg, #ffeef8, #e8f4fd, #f0e8ff);
   min-height: 100vh;
   overflow-x: hidden;
@@ -39,15 +39,14 @@ body {
   padding: 20px;
 }
 
-
 .window-frame {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-radius: 2vw;
+  border-radius: 25px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 3px solid rgba(255, 255, 255, 0.3);
-  width: 120VW;
-  max-width: 900px;
+  width: 100%;
+  max-width: 1200px; 
   max-height: 90vh;
   overflow: hidden;
   animation: slideIn 0.5s ease;
@@ -55,7 +54,6 @@ body {
 
 .window-header {
   background: black;
-  color: #e8f4fd;
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -68,23 +66,22 @@ body {
   gap: 8px;
 }
 
-.control-btn {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: white;
-}
-
 .close-btn {
   background: #ff5f57;
+}
+
+.control-btn {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
 }
 
 .window-title {
@@ -92,14 +89,10 @@ body {
   font-weight: bold;
   color: #ffffff;
   text-align: center;
-  font-family: "Font2";
-  letter-spacing: 2vw;
-  margin-left: 8vw;
-
-}
-
-.window-spacer {
-  width: 76px;
+  justify-content: center;
+  flex: 1;
+  letter-spacing: 1vw;
+  font-family: "font1";
 }
 
 .window-content {
@@ -107,21 +100,39 @@ body {
   max-height: calc(90vh - 80px);
   overflow-y: auto;
 }
+
+
+
+
 .header_container{
   flex-direction: row;
   display: flex;
 }
 
-.img_perfil{
-  width: 15rem;
+.img_perfil {
+  /* En lugar de un ancho fijo, usa un porcentaje */
+  width: 20rem;
+  max-width: 85rem; /* Establece un tamaño máximo para evitar que sea demasiado grande en pantallas grandes */
   margin-left: 2vw;
   border-bottom: 5px;
   border-radius: 2vw;
   filter: drop-shadow(1vw 1vw 2vw rgba(0, 0, 0, 0.5));
-  transition: width 9s, height 0s;
+  transition: width 0.9s ease; /* Reducí la duración para una transición más suave */
 }
-.img_perfil:hover{
+
+.img_perfil:hover {
   transform: scale(1.1);
+}
+
+/* Opcional: Para pantallas muy pequeñas, ajusta el margen */
+@media (max-width: 600px) {
+  .img_perfil {
+    margin-left: 0;
+    /* Centra la imagen */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .texto_container{
   margin-left: 10vw;
