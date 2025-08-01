@@ -149,7 +149,7 @@ function addLanguageToggle() {
     languageButton.addEventListener('click', () => {
         toggleLanguage();
         // Actualizar texto del botón
-        languageButton.innerHTML = currentLanguage === 'es' ? '🇺🇸 EN' : '🇪🇸 ES';
+        languageButton.innerHTML = currentLanguage === 'es' ? 'English' : 'Español';
         languageButton.title = currentLanguage === 'es' ? 'Switch to English' : 'Cambiar a Español';
     });
     

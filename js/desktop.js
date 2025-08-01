@@ -13,7 +13,7 @@ const translations = {
         startButton: "Iniciar",
         workLabel: "Proyectos",
         githubLabel: "Github",
-        icon_text: "Perfil", // Note: This key is also used for specific classes, verify usage.
+        icon_text: "Perfil",
         skillsLabel: "Habilidades",
         contactLabel: "Contacto",
     },
@@ -26,25 +26,22 @@ const translations = {
         startButton: "Start",
         workLabel: "Projects",
         githubLabel: "Github",
-        icon_text: "Porfile",
-        educationLabel: "Education", // This key is in 'en' but not in 'es'
+        icon_text: "Profile", 
         skillsLabel: "Skills",
         contactLabel: "Contact",
     }
 };
 
-// --- Inicialización al cargar el DOM ---
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeLanguage();
     initializeStartMenu();
     initializeClock(); 
-    updateTexts(); // Asegura que los textos se actualicen al cargar
+    updateTexts(); 
     updateDesktopLinks();
-    updateDynamicContent(); // Asegura que el contenido dinámico se actualice al cargar
+    updateDynamicContent(); 
 });
 
-
-// --- Funciones de Idioma ---
 
 function initializeLanguage() {
     const urlParams = new URLSearchParams(window.location.search);
