@@ -80,9 +80,7 @@ body {
   overflow: hidden;
 }
 
-.control-btn:hover {
-  transform: scale(1.1);
-}
+
 
 .window-title {
   font-size: 20px;
@@ -110,30 +108,23 @@ body {
 }
 
 .img_perfil {
-  /* En lugar de un ancho fijo, usa un porcentaje */
-  width: 20rem;
-  max-width: 85rem; /* Establece un tamaño máximo para evitar que sea demasiado grande en pantallas grandes */
-  margin-left: 2vw;
-  border-bottom: 5px;
+  width: 20vw;
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   border-radius: 2vw;
   filter: drop-shadow(1vw 1vw 2vw rgba(0, 0, 0, 0.5));
-  transition: width 0.9s ease; /* Reducí la duración para una transición más suave */
+  transition: transform 0.6s ease, width 0.6s ease;
 }
 
 .img_perfil:hover {
   transform: scale(1.1);
 }
 
-/* Opcional: Para pantallas muy pequeñas, ajusta el margen */
-@media (max-width: 600px) {
-  .img_perfil {
-    margin-left: 0;
-    /* Centra la imagen */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+
+
+
 .texto_container{
   margin-left: 10vw;
   margin-top: 5vw;
@@ -185,6 +176,7 @@ background-color: #e7e7e7;
 border-color: 3vw black;
 padding: 2vw;
 text-align: center;
+margin-bottom: 3vw;
 }
 .vision_title{
   font-family: "Font2";
@@ -197,7 +189,73 @@ text-align: center;
 }
 
 
-/* Animaciones */
+
+
+h2{
+  font-weight: 900;
+  font-family: font2;
+}
+.targetimg{
+  width: 20vw;
+}
+.targetimg {
+  width: 20vw;
+  transition: transform 0.6s ease;
+}
+.targetimg:hover {
+  transform: rotate(90deg);
+}
+.targetimg2 {
+  width: 20vw;
+  transition: transform 0.6s ease;
+}
+.targetimg2:hover {
+  transform: rotate(180deg);
+}
+.targetimg3 {
+  width: 20vw;
+  transition: transform 0.6s ease;
+}
+.targetimg3:hover {
+  transform: rotate(310deg);
+}
+
+
+.objetives_container{
+display: flex;
+flex-direction: column;
+gap: 3vw;
+padding-bottom: 3vw;
+}
+
+.short_term_objetives{
+background-color: rgb(248, 237, 241);
+text-align: center;
+border-radius: 4vw;
+line-height: 2vw;
+}
+
+.mid_term_objetives{
+background-color: #FFEDE7;
+text-align: center;
+border-radius: 4vw;
+line-height: 2vw;
+}
+
+.long_term_objetives{
+background-color: rgb(252, 216, 229);
+text-align: center;
+border-radius: 4vw;
+line-height: 2vw;
+}
+.objetive_text{
+font-family: "font3";
+font-size: 1.2vw;
+padding: 3vw;
+}
+
+
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -262,4 +320,22 @@ text-align: center;
     font-size: 24px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

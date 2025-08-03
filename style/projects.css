@@ -84,12 +84,21 @@ body {
 }
 
 .close-btn {
-  background: #f197ba;
+  background: #ff5f57;
 }
 
-.control-btn:hover {
-  transform: scale(1.1);
+.control-btn {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-indent: -9999px;
+  overflow: hidden;
 }
+
+
+
 
 .window-title {
   font-size: 20px;

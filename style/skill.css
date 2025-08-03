@@ -80,9 +80,10 @@ body {
   overflow: hidden;
 }
 
-.control-btn:hover {
-  transform: scale(1.1);
-}
+
+
+
+
 
 .window-title {
   font-size: 20px;
