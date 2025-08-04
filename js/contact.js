@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    
-
-    // Puedes reemplazar esto por un fetch() si quieres conectarlo a un backend
     form.reset();
   });
 
