@@ -1,30 +1,31 @@
+require('dotenv').config();
+console.log("ENV:", process.env.EMAIL_USER, process.env.EMAIL_PASS);
+
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Ruta del formulario
 app.post('/send', async (req, res) => {
   const { name, email, subject, message } = req.body;
 
   try {
-    // Configura el transporte con tus datos (ej: Gmail)
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'tu_correo@gmail.com',
-        pass: 'tu_contraseña_o_app_password'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
 
     const mailOptions = {
       from: email,
-      to: 'saradiaz.01214@gmail.com',
+      to: process.env.EMAIL_USER,
       subject: `[Contacto] ${subject}`,
       text: `Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`
     };
