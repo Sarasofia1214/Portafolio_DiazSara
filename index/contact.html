@@ -7,44 +7,36 @@
     <link rel="stylesheet" href="../style/contact.css">
 </head>
 <body>
-    <div class="page-container">
-        <div class="window-frame">
-            <div class="window-header">
-                <div class="window-controls">
-                    <a href="../index/desk.html" class="control-btn close-btn">×</a>
-                </div>
-                <div class="window-title">
+<div class="page-container">
+    <div class="window-frame">
+        <div class="window-header">
+            <div class="window-controls">
+                <a href="../index/desk.html" class="control-btn close-btn">×</a>
+            </div>
+             <div class="window-title">
                     <span id="windowTitle">Contactame</span>
                 </div>
-                <div class="window-spacer"></div>
-            </div>
+        </div>
 
-    
-            <div class="window-content" id="contactContent">
-                <div class="header_container">
-                    <section class="contact-section">
-  <div class="contact-container">
-    <p class="text_container"> Conecto propósito con tecnología. Si buscas más que una programadora, hablemos.</p>
-    
-    <form class="contact-form">
-      <div class="form-row">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-      </div>
-      <input type="text" placeholder="Subject" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+        <div class="window-content">
+            <section class="contact-section">
+                <p class="text_container">
+                    Conecto propósito con tecnología. Si buscas más que una programadora, hablemos. </p>
 
-                </div>
-               
-                </div>
-            </div>
-
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <input type="text" name="from_name" placeholder="Full Name" required>
+                        <input type="email" name="reply_to" placeholder="Email Address" required>
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
     </div>
-
+</div>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="../js/contact.js"></script>
 </body>
-<script src="../js/contact.js"></script>
 </html>

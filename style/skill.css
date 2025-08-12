@@ -84,7 +84,6 @@ body {
 
 
 
-
 .window-title {
   font-size: 20px;
   font-weight: bold;
@@ -95,6 +94,7 @@ body {
   letter-spacing: 1vw;
   font-family: "font1";
 }
+
 
 .window-content {
   padding: 30px;

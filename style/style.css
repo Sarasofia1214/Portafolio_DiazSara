@@ -31,7 +31,6 @@
             flex-direction: column;
         }
 
-        /* Desktop Icons Area */
         .desktop-icons {
             flex: 1;
             position: relative;
@@ -39,7 +38,6 @@
             overflow: hidden;
         }
 
-        /* Estilos para iconos con imágenes personalizadas */
         .experiencia, .git, .perfil, .contacto, .habilidades, .desktop-iconlanguage-icon {
             position: absolute;
             display: flex;

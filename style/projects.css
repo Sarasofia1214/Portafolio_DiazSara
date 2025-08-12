@@ -99,15 +99,15 @@ body {
 
 
 
-
 .window-title {
   font-size: 20px;
   font-weight: bold;
   color: #ffffff;
   text-align: center;
-  font-family: "font2";
-  letter-spacing: 0.5vw;
+  justify-content: center;
   flex: 1;
+  letter-spacing: 1vw;
+  font-family: "font1";
 }
 
 

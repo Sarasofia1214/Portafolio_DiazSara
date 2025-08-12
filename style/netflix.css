@@ -40,7 +40,6 @@ body {
   padding: 20px;
 }
 
-/* Marco de ventana */
 .window-frame {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
@@ -94,13 +93,15 @@ body {
 
 .window-title {
   font-size: 20px;
-  font-family: "Font2";
-  letter-spacing: 1.5vw;
   font-weight: bold;
   color: #ffffff;
   text-align: center;
+  justify-content: center;
   flex: 1;
+  letter-spacing: 1vw;
+  font-family: "font1";
 }
+
 
 
 
