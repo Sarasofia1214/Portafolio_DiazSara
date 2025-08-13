@@ -88,7 +88,6 @@ body {
   transform: scale(1.1);
 }
 
-
 .window-title {
   font-size: 20px;
   font-weight: bold;
@@ -198,10 +197,7 @@ body {
   width: 100%;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 
-
 }
-
-
 
 .contact-form button {
   background-color: #f589e4;
@@ -218,8 +214,6 @@ body {
 }
 
 
-
-
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -231,21 +225,6 @@ body {
   }
 }
 
-
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .window-frame {
     margin: 10px;

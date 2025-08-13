@@ -1,20 +1,19 @@
-   @font-face {
-            font-family: "font1";
-            src: url(../storage/fonts/Ragna.ttf);
-        }
-        @font-face {
-            font-family: "font2";
-            src: url(../storage/fonts/Milkalte.otf);
-        }/* Reset y configuración base */
-        @font-face {
-          font-family: "font3";
-          src: url(../storage/fonts/Lato-Light.ttf);
-        }
-        @font-face {
-          font-family: "font4";
-          src: url(../storage/fonts/Lato-Regular.ttf);
-        }
-
+@font-face {
+ font-family: "font1";
+ src: url(../storage/fonts/Ragna.ttf);
+}
+@font-face {
+ font-family: "font2";
+ src: url(../storage/fonts/Milkalte.otf);
+}
+@font-face {
+font-family: "font3";
+src: url(../storage/fonts/Lato-Light.ttf);
+}
+@font-face {
+font-family: "font4";
+src: url(../storage/fonts/Lato-Regular.ttf);
+}
 
 * {
   margin: 0;
@@ -85,8 +84,6 @@ body {
 .close-btn {
   background: #ff5f57;
 }
-
-
 .control-btn:hover {
   transform: scale(1.1);
 }
@@ -101,9 +98,6 @@ body {
   letter-spacing: 1vw;
   font-family: "font1";
 }
-
-
-
 
 .window-content {
   padding: 30px;

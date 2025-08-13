@@ -1,162 +1,155 @@
- 
-        @font-face {
-            font-family: "font1";
-            src: url(../storage/fonts/Ragna.ttf);
-        }
-        @font-face {
-            font-family: "font2";
-            src: url(../storage/fonts/Milkalte.otf);
-        }
+@font-face {
+    font-family: "font1";
+    src: url(../storage/fonts/Ragna.ttf);
+}
+@font-face {
+    font-family: "font2";
+    src: url(../storage/fonts/Milkalte.otf);
+}
  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background-image: url(../storage/img/fondo2.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-        }
+body {
+    background-image: url(../storage/img/fondo2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
 
-        .screen {
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
+.screen {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 
-        .desktop-icons {
-            flex: 1;
-            position: relative;
-            padding: 20px;
-            overflow: hidden;
-        }
+.desktop-icons {
+    flex: 1;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+}
 
-        .experiencia, .git, .perfil, .contacto, .habilidades, .desktop-iconlanguage-icon {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            width: 120px;
-            height: 120px;
-            justify-content: center;
-        }
+.experiencia, .git, .perfil, .contacto, .habilidades, .desktop-iconlanguage-icon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+}
 
-        .experiencia:hover, .git:hover, .perfil:hover, .contacto:hover, .habilidades:hover, .desktop-iconlanguage-icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+.experiencia:hover, .git:hover, .perfil:hover, .contacto:hover, .habilidades:hover, .desktop-iconlanguage-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
-        /* Posiciones de los iconos */
-        .experiencia { top: 5vw; left: 50px; }
-        .git { top: 5vw; left: 17.5vw; }
-        .perfil { top: 20vw; left: 50px; }
-        .contacto { top: 20vw; left: 17.5vw; }
-        .habilidades { top:20vw; left: 30vw; }
-        .desktop-iconlanguage-icon{ top: 5vw; left: 30vw;}
+.experiencia { top: 5vw; left: 50px; }
+.git { top: 5vw; left: 17.5vw; }
+.perfil { top: 20vw; left: 50px; }
+.contacto { top: 20vw; left: 17.5vw; }
+.habilidades { top:20vw; left: 30vw; }
+.desktop-iconlanguage-icon{ top: 5vw; left: 30vw;}
 
-        /* Contenedores de iconos */
-        .desktop_experiencia_container, .desktop_git_container, .desktop_perfil_container, 
-        .desktop_contacto_container, .desktop_habilidades_container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-        }
+.desktop_experiencia_container, .desktop_git_container, .desktop_perfil_container, 
+.desktop_contacto_container, .desktop_habilidades_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
 
-        /* Iconos de imágenes */
-        .experiencia_img, .git_img, .perfil_img, .contacto_img, .habilidades_img, .language_img {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
+.experiencia_img, .git_img, .perfil_img, .contacto_img, .habilidades_img, .language_img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 
-        .experiencia_img:hover, .git_img:hover, .perfil_img:hover, 
-        .contacto_img:hover, .habilidades_img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
+.experiencia_img:hover, .git_img:hover, .perfil_img:hover, 
+.contacto_img:hover, .habilidades_img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.icon_text {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
+ 
+    word-wrap: break-word;
+}
 
-        /* Texto de los iconos */
-        .icon_text {
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            color: #333;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 4px 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            line-height: 1.2;
-            max-width: 100px;
-            word-wrap: break-word;
-        }
+.language-icon {
+    position: absolute;
+    top: 400px;
+    left: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem
+    ;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    animation: pulse 3s infinite;
+}
 
-        /* Icono de idioma */
-        .language-icon {
-            position: absolute;
-            top: 400px;
-            left: 240px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10rem
-            ;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 120px;
-            height: 120px;
-            justify-content: center;
-            animation: pulse 3s infinite;
-        }
+.language-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+a{
+  text-decoration: none;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
 
-        .language-icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        a{
-          text-decoration: none;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+.file-icon {
+    font-size: 50px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    margin-bottom: 8px;
+}
 
-        .file-icon {
-            font-size: 50px;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-            margin-bottom: 8px;
-        }
-
-        .icon-label {
-            font-size: 12px;
-            font-weight: bold;
-            text-align: center;
-            color: #333;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 4px 8px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            line-height: 1.2;
-            max-width: 100px;
-            word-wrap: break-word;
-        }
+.icon-label {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
+    max-width: 100px;
+    word-wrap: break-word;
+}
 
    .taskbar {
     position: fixed;
@@ -178,9 +171,9 @@
     background: white;
     border: none;
     border-radius: 2vw;
-    padding: 1.2vw;
+    padding: 1vw;
     color: rgb(0, 0, 0);
-    font-size: 1.5vw;
+    font-size: 1rem;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -213,7 +206,6 @@
     transform: scale(0.95);
 }
 
-/* Menú de inicio */
 .start-menu {
     position: fixed;
     bottom: 70px;
@@ -238,7 +230,6 @@
     transform: translateY(0) scale(1);
 }
 
-/* Header del menú */
 .start-menu-header {
     background: linear-gradient(135deg, #a5a5a5 0%, #0d1412 100%);
     padding: 20px;
@@ -275,11 +266,9 @@
     opacity: 0.8;
 }
 
-/* Items del menú */
 .menu-items {
     padding: 15px;
 }
-
 .menu-item {
     display: flex;
     align-items: center;
@@ -304,7 +293,6 @@
 .menu-item:active {
     transform: translateX(3px) scale(0.98);
 }
-
 .menu-icon {
     width: 40px;
     height: 40px;
@@ -326,7 +314,6 @@
 .menu-text {
     flex: 1;
 }
-
 .menu-label {
     font-size: 16px;
     font-weight: 600;
@@ -340,7 +327,6 @@
     opacity: 0.8;
 }
 
-/* Selector de idioma */
 .language-selector {
     position: absolute;
     right: 15px;
@@ -356,7 +342,6 @@
     z-index: 1002;
     min-width: 120px;
 }
-
 .language-selector.show {
     opacity: 1;
     visibility: visible;
@@ -370,7 +355,6 @@
     font-size: 14px;
     color: #333;
 }
-
 .language-option:first-child {
     border-radius: 10px 10px 0 0;
 }
@@ -388,39 +372,6 @@
     color: white;
 }
 
-/* Toggle para modo oscuro */
-.menu-toggle {
-    width: 50px;
-    height: 25px;
-    background: #ddd;
-    border-radius: 15px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.menu-toggle::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 21px;
-    height: 21px;
-    background: white;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.menu-toggle.active {
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-}
-
-.menu-toggle.active::before {
-    transform: translateX(25px);
-}
-
-/* Aplicaciones en la barra de tareas */
 .taskbar-apps {
     display: flex;
     align-items: center;
@@ -452,7 +403,7 @@
     object-fit: contain;
 }
 
-/* Bandeja del sistema */
+
 .system-tray {
     display: flex;
     align-items: center;
@@ -485,7 +436,7 @@
     opacity: 0.8;
 }
 
-/* Overlay para cerrar el menú */
+
 .overlay {
     position: fixed;
     top: 0;
@@ -505,33 +456,65 @@
     visibility: visible;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .start-menu {
-        width: 300px;
-        left: 10px;
-        bottom: 80px;
+width: 300px;
+left: 10px;
+bottom: 80px;
     }
     
     .taskbar {
-        height: 70px;
-        padding: 0 10px;
+height: 70px;
+padding: 0 10px;
     }
     
     .taskbar-apps {
-        margin-left: 10px;
-        gap: 8px;
+margin-left: 10px;
+gap: 8px;
     }
     
     .taskbar-app {
-        width: 35px;
-        height: 35px;
+width: 35px;
+height: 35px;
     }
     
     .taskbar-app img {
-        width: 20px;
-        height: 20px;
+width: 20px;
+height: 20px;
     }
 }
 
-/* Animaciones adicionales */
+
+
+@media screen and (max-width: 430px) {
+  .desktop-icons {
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: flex-start ;
+    gap: 14px ;
+    position: relative ;
+    top: 0 ;
+    left: 0 ;
+    width: 100% ;
+    padding-top: 20px ;
+  }
+
+  .desktop-icons > div {
+    position: static ;
+    margin: 0 ;
+  }
+
+  .desktop-icons img {
+    width: 50px ;
+    height: auto ;
+    display: block ;
+  }
+
+  .icon_text, 
+  .icon-label {
+    text-align: center ;
+    display: block ;
+  }
+}

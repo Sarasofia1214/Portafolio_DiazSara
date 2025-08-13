@@ -2,7 +2,7 @@ let currentLanguage = localStorage.getItem("language") || "es";
 const translations = {
     es: {
         title: "Portafolio",
-        workplace: "Sara's worksplace",
+        workplace: "Hub de Sara",
         loadingText: "Cargando Escritorio Mágico ...",
         accessButton: "Acceder",
         tagline: "Aprendizaje | Pasión | Conexión"

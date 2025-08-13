@@ -125,7 +125,7 @@ body {
 }
 
 .project-flip-container {
-    width: 65vw; /* Mantengo tu width original para el contenedor */
+    width: 65vw; 
     height: 80vh;
     perspective: 1000px;
     margin: 2vw;
